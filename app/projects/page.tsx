@@ -1,4 +1,5 @@
 import { projects } from "@/lib/projects_data";
+import { ChevronRight } from "lucide-react";
 
 export default function Page() {
   return (
@@ -8,15 +9,20 @@ export default function Page() {
         {projects.map((project) => (
           <div key={project.title}>
             <a
-              className="flex w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+              className="group flex w-full select-none flex-col justify-end rounded-md from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-sm hover:bg-gradient-to-b"
               href={project.href}
             >
-              <div className="text-sm font-medium leading-none">
-                {project.title}
+              <div className="flex items-center justify-between">
+                <div className="text-sm font-medium leading-none max-w-60 sm:max-w-md">
+                  <p className="line-clamp-2 text-sm leading-snug">
+                    {project.title}
+                  </p>
+                  <p className="pt-2 line-clamp-2 text-sm leading-snug text-muted-foreground">
+                    {project.description}
+                  </p>
+                </div>
+                <ChevronRight className="ml-2 h-4 w-4" />
               </div>
-              <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                {project.description}
-              </p>
             </a>
           </div>
         ))}
