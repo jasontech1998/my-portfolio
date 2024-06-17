@@ -10,7 +10,7 @@ export default function Home() {
         {` I craft visually stunning and intuitive user interfaces that blend form and function.`}
       </p>
       <p className="mb-4">
-        {` Driven by curiosity and a pursuit of excellence, I explore multiple ideas and leverage prototypes to shape seamless digital experiences. My focus is on creating interfaces that effortlessly extend human capabilities while adhering to best practices for performance, maintainability, and accessibility.`}
+        {`My focus is on creating interfaces that effortlessly extend human capabilities while adhering to best practices for performance, maintainability, and accessibility.`}
       </p>
     </section>
   );

@@ -18,7 +18,7 @@ export default function Page() {
           Overview
         </h2>
         <Separator />
-        <p className="leading-7 [&:not(:first-child)]:mt-6 mb-4">
+        <p className="leading-7 mt-6 mb-4">
           Podspot is an app designed to let you listen, comment, and rate your
           favorite podcasts.
         </p>
@@ -28,7 +28,7 @@ export default function Page() {
           Use Case
         </h2>
         <Separator />
-        <p className="leading-7 [&:not(:first-child)]:mt-6 mb-4">
+        <p className="leading-7 mt-6 mb-4">
           Podcast enthusiasts often encounter thought-provoking or engaging
           segments that they wish to share with others. This app streamlines the
           process of curating and disseminating these captivating moments by

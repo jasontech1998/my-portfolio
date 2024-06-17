@@ -29,7 +29,7 @@ export default function Page() {
           Use Case
         </h2>
         <Separator />
-        <p className="leading-7 [&:not(:first-child)]:mt-6 mb-4">
+        <p className="leading-7 mt-6 mb-4">
           The primary use case of Spotify Share is to automate the process of
           sharing all your liked (or saved) songs from an album.
         </p>
@@ -39,7 +39,7 @@ export default function Page() {
           Why I built this
         </h2>
         <Separator />
-        <p className="leading-7 [&:not(:first-child)]:mt-6 mb-4">
+        <p className="leading-7 mt-6 mb-4">
         As a music enthusiast, I often discuss new albums with my friends and share which songs we liked the most. To streamline this process and make sharing easier, I built Spotify Share. After all, sharing is caring!
         </p>
       </div>
