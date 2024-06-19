@@ -30,6 +30,7 @@ export default function Page() {
             width={750}
             height={350}
             alt="Gif of hil3"
+            priority
           />
         </div>
       </div>

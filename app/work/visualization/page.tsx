@@ -33,6 +33,7 @@ export default function Page() {
               width={500}
               height={500}
               alt="Picture of bar chart"
+              priority
             />
           </div>
           <div className="flex justify-center">
@@ -41,6 +42,7 @@ export default function Page() {
               width={500}
               height={500}
               alt="Picture of detailed bar chart"
+              priority
             />
           </div>
           <div className="flex justify-center">
@@ -49,6 +51,7 @@ export default function Page() {
               width={500}
               height={500}
               alt="Picture of line chart"
+              priority
             />
           </div>
           <div className="flex justify-center">
@@ -57,6 +60,7 @@ export default function Page() {
               width={500}
               height={500}
               alt="Picture of pie chart"
+              priority
             />
           </div>
         </div>

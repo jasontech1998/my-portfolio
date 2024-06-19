@@ -32,6 +32,7 @@ export default function Page() {
             width={550}
             height={350}
             alt="Gif of ui components"
+            priority
           />
         </div>
       </div>

@@ -32,6 +32,7 @@ export default function Page() {
             width={550}
             height={550}
             alt="Picture of CareerAscent home page"
+            priority
           />
         </div>
       </div>
