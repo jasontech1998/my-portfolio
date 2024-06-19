@@ -4,7 +4,7 @@ import Example from '@/components/playground/example';
 export default function Home() {
   return (
     <main className="py-24 pl-4">
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">jason yu</h1>
+      <h1 className="text-2xl self-end font-semibold tracking-tighter mb-8">jason yu</h1>
       <p className="mb-4">
         Hi, I&apos;m a front end engineer based in Bay Area, CA.
       </p>

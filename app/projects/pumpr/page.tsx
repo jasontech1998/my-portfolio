@@ -9,8 +9,8 @@ export default function Page() {
 
   return (
     <section>
-      <div className="flex flex-wrap justify-between">
-        <h1 className="mb-8 text-2xl font-semibold tracking-tighter">Pumpr</h1>
+      <div className="flex flex-wrap justify-between mb-8">
+        <h1 className="text-2xl self-end font-semibold tracking-tighter">Pumpr</h1>
         <GithubButton href={repoHref} />
       </div>
 

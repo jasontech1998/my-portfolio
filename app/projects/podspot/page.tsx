@@ -15,8 +15,8 @@ export default function Page() {
 
   return (
     <section>
-      <div className="flex flex-wrap justify-between">
-        <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
+      <div className="flex flex-wrap justify-between mb-8">
+        <h1 className="text-2xl self-end font-semibold tracking-tighter">
           Podspot
         </h1>
         <GithubButton href={repoHref} />

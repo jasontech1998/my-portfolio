@@ -4,14 +4,14 @@ import { ChevronRight } from "lucide-react";
 export default function Page() {
   return (
     <section>
-      <div className="flex items-baseline">
-        <h1 className="mb-8 text-2xl font-semibold tracking-tighter">Work</h1>
-        <p className="mb-8 ml-2 font-medium">at</p>
+      <div className="flex items-baseline mb-8">
+        <h1 className="text-2xl font-semibold tracking-tighter">Work</h1>
+        <p className=" ml-2 font-medium">at</p>
         <a
           rel="noopener noreferrer"
           target="_blank"
           href="https://eab.com/"
-          className="mb-8 ml-2 underline cursor-pointer font-medium decoration-sky-500"
+          className="ml-2 underline cursor-pointer font-medium decoration-sky-500"
         >
           EAB
         </a>

@@ -4,8 +4,8 @@ import { ChevronRight } from "lucide-react";
 export default function Page() {
   return (
     <section>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">Projects</h1>
-      <div className="flex flex-col gap-3">
+      <h1 className="text-2xl self-end font-semibold tracking-tighter">Projects</h1>
+      <div className="flex flex-col gap-3 mt-8">
         {projects.map((project) => (
           <article key={project.title}>
             <a
