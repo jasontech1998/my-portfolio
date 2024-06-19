@@ -2,6 +2,8 @@ import { GithubButton } from "@/components/GithubButton";
 import { StackBadge } from "@/components/StackBadge";
 import { Separator } from "@/components/ui/separator";
 
+import Image from "next/image";
+
 export default function Page() {
   const repoHref = "https://github.com/jasontech1998/spotify-comment-app";
 
@@ -33,6 +35,15 @@ export default function Page() {
           Overview
         </h2>
         <Separator />
+        <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
+          <Image
+            src="/assets/projects/podspot.png"
+            width={550}
+            height={550}
+            alt="Picture of Podspot landing page"
+            priority
+          />
+        </div>
         <p className="leading-7 mt-6 mb-4">
           Podspot is an app designed to let you listen, comment, and rate your
           favorite podcasts.

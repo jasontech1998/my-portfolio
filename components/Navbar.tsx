@@ -16,8 +16,7 @@ import {
 import { Briefcase, Code } from "lucide-react";
 import Link from "next/link";
 
-import { projects } from "@/lib/projects_data";
-import { workData } from "@/lib/work_data";
+import { projects, workData } from "@/lib/data";
 
 export function Navbar() {
   return (

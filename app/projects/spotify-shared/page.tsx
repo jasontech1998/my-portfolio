@@ -2,6 +2,8 @@ import { GithubButton } from "@/components/GithubButton";
 import { StackBadge } from "@/components/StackBadge";
 import { Separator } from "@/components/ui/separator";
 
+import Image from "next/image";
+
 export default function Page() {
   const repoHref = "https://github.com/jasontech1998/spotify-share";
   const techStack = [
@@ -17,7 +19,7 @@ export default function Page() {
 
   return (
     <section>
-      <div className="flex flex-wrap justify-between mb-8 mb-8">
+      <div className="flex flex-wrap justify-between mb-8">
         <h1 className="text-2xl self-end font-semibold tracking-tighter">
           Spotify Shared
         </h1>
@@ -33,6 +35,15 @@ export default function Page() {
           Overview
         </h2>
         <Separator />
+        <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
+          <Image
+            src="/assets/projects/spotify_shared.gif"
+            width={550}
+            height={550}
+            alt="Gif of Spotify Shared"
+            priority
+          />
+        </div>
         <p className="leading-7 [&:not(:first-child)]:mt-6 mb-4">
           Spotify Shared is an app designed to automate the sharing of your liked
           songs from any album. This tool makes it easy for music enthusiasts to
