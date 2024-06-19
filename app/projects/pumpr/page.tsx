@@ -5,16 +5,16 @@ import { Separator } from "@/components/ui/separator";
 export default function Page() {
   const repoHref = "https://github.com/jasontech1998/pumpr-app";
 
-  const techStack = ["React", "Redux", "Firebase"];
+  const techStack = ["React", "React Router", "Redux", "Firebase"];
 
   return (
     <section>
-      <div className="flex justify-between">
+      <div className="flex flex-wrap justify-between">
         <h1 className="mb-8 text-2xl font-semibold tracking-tighter">Pumpr</h1>
         <GithubButton href={repoHref} />
       </div>
 
-      <div className="flex pb-6 gap-1">
+      <div className="flex flex-wrap pb-6 gap-1">
         {techStack.map((tech, index) => {
           return <StackBadge key={tech + index} title={tech} />;
         })}
@@ -36,7 +36,9 @@ export default function Page() {
         </h2>
         <Separator />
         <p className="leading-7 mt-6 mb-4">
-        Users provide info about themselves to a user profile, and are matched with other users based on their maximum lifts, workout schedule & location, and fitness goals.
+          Users provide info about themselves to a user profile, and are matched
+          with other users based on their maximum lifts, workout schedule &
+          location, and fitness goals.
         </p>
       </div>
     </section>

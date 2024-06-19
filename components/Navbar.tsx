@@ -13,14 +13,15 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
-import { Code } from "lucide-react";
+import { Briefcase, Code } from "lucide-react";
 import Link from "next/link";
 
 import { projects } from "@/lib/projects_data";
+import { workData } from "@/lib/work_data";
 
 export function Navbar() {
   return (
-    <NavigationMenu>
+    <NavigationMenu className="pt-2">
       <NavigationMenuList>
         <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>
@@ -28,6 +29,38 @@ export function Navbar() {
               Home
             </NavigationMenuLink>
           </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Work</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid gap-2 p-6 w-[300px] sm:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+              <li className="row-span-3">
+                <NavigationMenuLink asChild>
+                  <a
+                    className="flex w-full h-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                    href="/work"
+                  >
+                    <Briefcase />
+                    <div className="mb-2 mt-4 text-lg font-medium">
+                      Work
+                    </div>
+                    <p className="text-sm leading-tight text-muted-foreground">
+                      {`Highlights from my time at EAB`}
+                    </p>
+                  </a>
+                </NavigationMenuLink>
+              </li>
+              {workData.map((work) => (
+                <ListItem
+                  key={work.title}
+                  title={work.title}
+                  href={work.href}
+                >
+                  {work.description}
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Projects</NavigationMenuTrigger>
@@ -76,7 +109,7 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "block select-none h-full space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className
           )}
           {...props}

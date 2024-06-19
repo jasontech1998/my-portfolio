@@ -1,4 +1,4 @@
-import { FileText, Github, Linkedin } from "lucide-react";
+import { FileText, Github, Linkedin, Twitter } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
@@ -67,6 +67,26 @@ export const Connect = () => {
           </TooltipTrigger>
           <TooltipContent>
             <p>Visit LinkedIn Profile</p>
+          </TooltipContent>
+        </Tooltip>
+
+        <Tooltip>
+          <TooltipTrigger>
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://x.com/lockedinagain"
+              className={
+                "block select-none space-y-1 rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+              }
+            >
+              <div className="flex align-center">
+                <Twitter />
+              </div>
+            </a>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>Visit Twitter Profile</p>
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>

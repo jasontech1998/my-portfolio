@@ -5,18 +5,24 @@ import { Separator } from "@/components/ui/separator";
 export default function Page() {
   const repoHref = "https://github.com/jasontech1998/spotify-comment-app";
 
-  const techStack = ["React", "Redux", "Firebase", "Spotify Web Api"];
+  const techStack = [
+    "React",
+    "React Router",
+    "Redux",
+    "Firebase",
+    "Spotify Web Api",
+  ];
 
   return (
     <section>
-      <div className="flex justify-between">
+      <div className="flex flex-wrap justify-between">
         <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
           Podspot
         </h1>
         <GithubButton href={repoHref} />
       </div>
 
-      <div className="flex pb-6 gap-1">
+      <div className="flex flex-wrap pb-6 gap-1">
         {techStack.map((tech, index) => {
           return <StackBadge key={tech + index} title={tech} />;
         })}
@@ -38,9 +44,9 @@ export default function Page() {
         </h2>
         <Separator />
         <p className="leading-7 mt-6 mb-4">
-          Podspot streamlines the process of curating and disseminating these
-          captivating moments by allowing users to seamlessly pinpoint and share
-          specific timestamps from podcasts.
+          Users can search and listen to podcasts on Spotify and leave
+          time-stamped comments, allowing the community to easily see which
+          parts of the podcasts other users found interesting.
         </p>
       </div>
     </section>
