@@ -2,7 +2,7 @@ import { StackBadge } from "@/components/StackBadge";
 import { Separator } from "@/components/ui/separator";
 
 export default function Page() {
-  const techStack = ["LitElement", "Ionic", "Angular"];
+  const techStack = ["LitElement", "Ionic", "Angular", "Typescript"];
 
   return (
     <section>

@@ -1,8 +1,10 @@
 import { StackBadge } from "@/components/StackBadge";
 import { Separator } from "@/components/ui/separator";
 
+import Image from "next/image";
+
 export default function Page() {
-  const techStack = ["LitElement", "Chartjs"];
+  const techStack = ["LitElement", "Chartjs", "Typescript"];
 
   return (
     <section>
@@ -10,6 +12,7 @@ export default function Page() {
         <h1 className="text-2xl self-end font-semibold tracking-tighter">
           Visualization
         </h1>
+        <p className="text-sm self-end leading-snug text-muted-foreground">January 2023</p>
       </div>
 
       <div className="flex flex-wrap pb-6 gap-1">
@@ -23,7 +26,40 @@ export default function Page() {
           Overview
         </h2>
         <Separator />
-        <p className="leading-7 mt-6 mb-4">W.I.P.</p>
+        <div className="grid grid-cols-2 gap-4 mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
+          <div className="flex justify-center">
+            <Image
+              src="/assets/work/barchart.png"
+              width={500}
+              height={500}
+              alt="Picture of bar chart"
+            />
+          </div>
+          <div className="flex justify-center">
+            <Image
+              src="/assets/work/barchart_detailed.png"
+              width={500}
+              height={500}
+              alt="Picture of detailed bar chart"
+            />
+          </div>
+          <div className="flex justify-center">
+            <Image
+              src="/assets/work/linechart.png"
+              width={500}
+              height={500}
+              alt="Picture of line chart"
+            />
+          </div>
+          <div className="flex justify-center">
+            <Image
+              src="/assets/work/piechart.png"
+              width={500}
+              height={500}
+              alt="Picture of pie chart"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
