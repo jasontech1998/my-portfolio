@@ -1,6 +1,8 @@
+import { Connect } from "@/components/Connect";
+
 export default function Home() {
   return (
-    <section className="py-32 pl-4">
+    <main className="py-32 pl-4">
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter">jason yu</h1>
       <p className="mb-4">
         {`Hi, I'm a front end engineer based in Bay Area, CA.
@@ -12,6 +14,7 @@ export default function Home() {
       <p className="mb-4">
         {`My focus is on creating interfaces that effortlessly extend human capabilities while adhering to best practices for performance, maintainability, and accessibility.`}
       </p>
-    </section>
+      <Connect />
+    </main>
   );
 }

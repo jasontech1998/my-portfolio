@@ -7,9 +7,9 @@ export default function Page() {
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter">Projects</h1>
       <div className="flex flex-col gap-3">
         {projects.map((project) => (
-          <div key={project.title}>
+          <article key={project.title}>
             <a
-              className="group flex w-full select-none flex-col justify-end rounded-md from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-sm hover:bg-gradient-to-b"
+              className="flex flex-col w-full p-3 -mx-3 justify-end rounded-md from-muted/50 to-muted no-underline outline-none focus:shadow-sm hover:bg-gradient-to-b"
               href={project.href}
             >
               <div className="flex items-center justify-between">
@@ -24,7 +24,7 @@ export default function Page() {
                 <ChevronRight className="ml-2 h-4 w-4" />
               </div>
             </a>
-          </div>
+          </article>
         ))}
       </div>
     </section>

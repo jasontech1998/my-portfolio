@@ -3,16 +3,14 @@ import { StackBadge } from "@/components/StackBadge";
 import { Separator } from "@/components/ui/separator";
 
 export default function Page() {
-  const repoHref = "https://github.com/jasontech1998/spotify-comment-app";
+  const repoHref = "https://github.com/jasontech1998/pumpr-app";
 
-  const techStack = ["React", "Redux", "Firebase", "Spotify Web Api"];
+  const techStack = ["React", "Redux", "Firebase"];
 
   return (
     <section>
       <div className="flex justify-between">
-        <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-          Podspot
-        </h1>
+        <h1 className="mb-8 text-2xl font-semibold tracking-tighter">Pumpr</h1>
         <GithubButton href={repoHref} />
       </div>
 
@@ -28,8 +26,8 @@ export default function Page() {
         </h2>
         <Separator />
         <p className="leading-7 mt-6 mb-4">
-          Podspot is an app designed to let you listen, comment, and rate your
-          favorite podcasts.
+          Pumpr is a Fitness Social Media Platform for users to meet workout
+          partners with similar strength, goals and schedules.
         </p>
       </div>
       <div className="py-3">
@@ -38,9 +36,7 @@ export default function Page() {
         </h2>
         <Separator />
         <p className="leading-7 mt-6 mb-4">
-          Podspot streamlines the process of curating and disseminating these
-          captivating moments by allowing users to seamlessly pinpoint and share
-          specific timestamps from podcasts.
+        Users provide info about themselves to a user profile, and are matched with other users based on their maximum lifts, workout schedule & location, and fitness goals.
         </p>
       </div>
     </section>

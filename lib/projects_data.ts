@@ -8,6 +8,11 @@ export const projects: { title: string; href: string; description: string }[] = 
     {
       title: "Podspot",
       href: "/projects/podspot",
-      description: "Listen, comment and rate your favorite podcasts",
+      description: "Listen, comment and rate your favorite podcasts.",
+    },
+    {
+      title: "Pumpr",
+      href: "/projects/pumpr",
+      description: "Pumpr is a Fitness Social Media Platform for users to meet workout partners with similar strength, goals and schedules.",
     },
   ];
