@@ -1,7 +1,21 @@
+"use client";
+
 import { workData } from "@/lib/work_data";
 import { ChevronRight } from "lucide-react";
 
+import { motion } from "framer-motion";
+
 export default function Page() {
+  const workItems = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 1,
+      },
+    },
+  };
   return (
     <section>
       <div className="flex items-baseline mb-8">
@@ -17,9 +31,14 @@ export default function Page() {
         </a>
       </div>
 
-      <div className="flex flex-col gap-3">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        transition={{ staggerChildren: 0.3 }}
+        className="flex flex-col gap-3"
+      >
         {workData.map((work) => (
-          <article key={work.title}>
+          <motion.article variants={workItems} key={work.title}>
             <a
               className="flex flex-col w-full p-3 -mx-3 justify-end rounded-md from-muted/50 to-muted no-underline outline-none focus:shadow-sm hover:bg-gradient-to-b"
               href={work.href}
@@ -36,9 +55,9 @@ export default function Page() {
                 <ChevronRight className="ml-2 h-4 w-4" />
               </div>
             </a>
-          </article>
+          </motion.article>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 }
