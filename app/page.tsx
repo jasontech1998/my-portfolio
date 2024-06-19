@@ -1,4 +1,5 @@
 import { Connect } from "@/components/Connect";
+import Example from '@/components/playground/example';
 
 export default function Home() {
   return (

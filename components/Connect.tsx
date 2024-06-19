@@ -1,4 +1,6 @@
+"use client";
 import { FileText, Github, Linkedin, Twitter } from "lucide-react";
+import { motion } from "framer-motion";
 import {
   Tooltip,
   TooltipContent,
@@ -20,9 +22,14 @@ export const Connect = () => {
                 "block select-none space-y-1 rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
               }
             >
-              <div className="flex align-center">
+              <motion.div
+                initial={{ rotate: 0 }}
+                animate={{ rotate: [90, 0] }}
+                transition={{ duration: 1 }}
+                className="flex align-center"
+              >
                 <FileText />
-              </div>
+              </motion.div>
             </a>
           </TooltipTrigger>
           <TooltipContent>
@@ -40,9 +47,14 @@ export const Connect = () => {
                 "block select-none space-y-1 rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
               }
             >
-              <div className="flex align-center">
+              <motion.div
+                initial={{ rotate: 0 }}
+                animate={{ rotate: [90, 0] }}
+                transition={{ duration: 1 }}
+                className="flex align-center"
+              >
                 <Github />
-              </div>
+              </motion.div>
             </a>
           </TooltipTrigger>
           <TooltipContent>
@@ -60,9 +72,14 @@ export const Connect = () => {
                 "block select-none space-y-1 rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
               }
             >
-              <div className="flex align-center">
+              <motion.div
+                initial={{ rotate: 0 }}
+                animate={{ rotate: [90, 0] }}
+                transition={{ duration: 1 }}
+                className="flex align-center"
+              >
                 <Linkedin />
-              </div>
+              </motion.div>
             </a>
           </TooltipTrigger>
           <TooltipContent>
@@ -80,9 +97,14 @@ export const Connect = () => {
                 "block select-none space-y-1 rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
               }
             >
-              <div className="flex align-center">
+              <motion.div
+                initial={{ rotate: 0 }}
+                animate={{ rotate: [90, 0] }}
+                transition={{ duration: 1 }}
+                className="flex align-center"
+              >
                 <Twitter />
-              </div>
+              </motion.div>
             </a>
           </TooltipTrigger>
           <TooltipContent>
