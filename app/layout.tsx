@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Inter } from "next/font/google";
 import { Navbar } from "@/components/Navbar";
 
@@ -24,6 +25,7 @@ export default function RootLayout({
         <div className="flex flex-col max-w-2xl mx-auto px-4 md:px-0">
           <Navbar />
           {children}
+          <SpeedInsights />
         </div>
       </body>
     </html>
