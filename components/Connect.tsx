@@ -10,7 +10,7 @@ import {
 
 export const Connect = () => {
   return (
-    <div className="flex gap-3 -mx-4 mt-12">
+    <div className="flex gap-3 -mx-3 mt-12">
       <TooltipProvider delayDuration={100}>
         <Tooltip>
           <TooltipTrigger>
