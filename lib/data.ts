@@ -47,3 +47,14 @@ export const workData: { title: string; href: string; description: string }[] =
       description: "Building a new native experience for Navigate",
     },
   ];
+
+  export const creative: { title: string; href: string; description: string }[] =
+  [
+    {
+      title: "Custom Navbar",
+      href: "/creative/custom_nav",
+      description: "My own custom navbar",
+    }
+  ];
+
+

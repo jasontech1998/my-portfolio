@@ -13,10 +13,10 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
-import { Briefcase, Code } from "lucide-react";
+import { Briefcase, Code, Palette } from "lucide-react";
 import Link from "next/link";
 
-import { projects, workData } from "@/lib/data";
+import { projects, workData, creative } from "@/lib/data";
 
 export function Navbar() {
   return (
@@ -88,6 +88,38 @@ export function Navbar() {
                   href={project.href}
                 >
                   {project.description}
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Creative</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid gap-2 p-6 w-[300px] sm:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+              <li className="row-span-3">
+                <NavigationMenuLink asChild>
+                  <a
+                    className="flex w-full h-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                    href="/creative"
+                  >
+                    <Palette />
+                    <div className="mb-2 mt-4 text-lg font-medium">
+                      My Creative Components
+                    </div>
+                    <p className="text-sm leading-tight text-muted-foreground">
+                      {`Collection of my custom components`}
+                    </p>
+                  </a>
+                </NavigationMenuLink>
+              </li>
+              {creative.map((item) => (
+                <ListItem
+                  key={item.title}
+                  title={item.title}
+                  href={item.href}
+                >
+                  {item.description}
                 </ListItem>
               ))}
             </ul>

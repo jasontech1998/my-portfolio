@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 
-export default function Example() {
+export default function CustomNav() {
   const [focused, setFocused] = useState<string | null>(null);
 
   const items = ["Home", "Work", "Projects", "Creative"];
