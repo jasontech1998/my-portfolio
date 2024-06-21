@@ -1,6 +1,5 @@
 import { GithubButton } from "@/components/GithubButton";
 import { StackBadge } from "@/components/StackBadge";
-import { Separator } from "@/components/ui/separator";
 
 import Image from "next/image";
 
