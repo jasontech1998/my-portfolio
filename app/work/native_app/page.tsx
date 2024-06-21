@@ -1,6 +1,8 @@
 import { StackBadge } from "@/components/StackBadge";
 import { Separator } from "@/components/ui/separator";
 
+import Image from "next/image";
+
 export default function Page() {
   const techStack = ["LitElement", "Ionic", "Angular", "Typescript"];
 
@@ -10,6 +12,9 @@ export default function Page() {
         <h1 className="text-2xl self-end font-semibold tracking-tighter">
           Native App
         </h1>
+        <p className="text-sm self-end leading-snug text-muted-foreground">
+          June 2024
+        </p>
       </div>
 
       <div className="flex flex-wrap pb-6 gap-1">
@@ -23,7 +28,33 @@ export default function Page() {
           Overview
         </h2>
         <Separator />
-        <p className="leading-7 mt-6 mb-4">W.I.P.</p>
+        <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
+          <Image
+            src="/assets/work/native_one.png"
+            width={500}
+            height={500}
+            alt="Picture of Journeys feature in Native one"
+            priority
+          />
+        </div>
+        <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
+          <Image
+            src="/assets/work/native_two.png"
+            width={500}
+            height={500}
+            alt="Picture of Journeys feature in Native two"
+            priority
+          />
+        </div>
+        <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
+          <Image
+            src="/assets/work/native_three.png"
+            width={500}
+            height={500}
+            alt="Picture of Journeys feature in Native three"
+            priority
+          />
+        </div>
       </div>
     </section>
   );

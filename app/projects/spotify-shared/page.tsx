@@ -36,18 +36,15 @@ export default function Page() {
         </h2>
         <Separator />
         <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
-          <Image
-            src="/assets/projects/spotify_shared.gif"
-            width={550}
-            height={550}
-            alt="Gif of Spotify Shared"
-            priority
-          />
+          <video width="650" height="550" controls autoPlay loop muted>
+            <source src="/assets/projects/spotify_shared.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
         <p className="leading-7 [&:not(:first-child)]:mt-6 mb-4">
-          Spotify Shared is an app designed to automate the sharing of your liked
-          songs from any album. This tool makes it easy for music enthusiasts to
-          share their favorite tracks with friends effortlessly.
+          Spotify Shared is an app designed to automate the sharing of your
+          liked songs from any album. This tool makes it easy for music
+          enthusiasts to share their favorite tracks with friends effortlessly.
         </p>
       </div>
       <div className="py-3">
@@ -57,7 +54,8 @@ export default function Page() {
         <Separator />
         <p className="leading-7 mt-6 mb-4">
           Users can share their liked tracks from albums easily by creating a
-          playlist with all their liked songs and copying the playlist url for sharing.
+          playlist with all their liked songs and copying the playlist url for
+          sharing.
         </p>
       </div>
     </section>

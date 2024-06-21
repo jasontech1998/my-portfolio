@@ -26,10 +26,28 @@ export default function Page() {
         <Separator />
         <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
           <Image
-            src="/assets/work/hil3.gif"
-            width={750}
-            height={350}
-            alt="Gif of hil3"
+            src="/assets/work/hil_one.png"
+            width={500}
+            height={500}
+            alt="Picture of HIL 3 template view one"
+            priority
+          />
+        </div>
+        <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
+          <Image
+            src="/assets/work/hil_two.png"
+            width={500}
+            height={500}
+            alt="Picture of HIL 3 template view two"
+            priority
+          />
+        </div>
+        <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
+          <Image
+            src="/assets/work/hil_three.png"
+            width={500}
+            height={500}
+            alt="Picture of HIL 3 template view three"
             priority
           />
         </div>
