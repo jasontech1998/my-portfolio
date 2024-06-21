@@ -29,10 +29,7 @@ export default function Page() {
         </h2>
         <Separator />
         <div className="flex flex-col justify-center items-center">
-          <div
-            className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2"
-            style={{ width: "550px", height: "550px" }}
-          >
+          <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
             <Image
               src="/assets/work/barchart.png"
               width={550}
@@ -41,10 +38,7 @@ export default function Page() {
               priority
             />
           </div>
-          <div
-            className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2"
-            style={{ width: "550px", height: "550px" }}
-          >
+          <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
             <Image
               src="/assets/work/barchart_detailed.png"
               width={550}
@@ -53,10 +47,7 @@ export default function Page() {
               priority
             />
           </div>
-          <div
-            className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2"
-            style={{ width: "550px", height: "550px" }}
-          >
+          <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
             <Image
               src="/assets/work/linechart.png"
               width={550}

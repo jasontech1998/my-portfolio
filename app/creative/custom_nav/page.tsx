@@ -9,7 +9,7 @@ export default function Page() {
     <section>
       <div className="flex flex-wrap justify-between mb-8">
         <h1 className="text-2xl self-end font-semibold tracking-tighter">
-          Custom Navbar
+          Custom Desktop Navbar
         </h1>
         <p className="text-sm self-end leading-snug text-muted-foreground">
           June 2024

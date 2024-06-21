@@ -51,9 +51,9 @@ export const workData: { title: string; href: string; description: string }[] =
   export const creative: { title: string; href: string; description: string }[] =
   [
     {
-      title: "Custom Navbar",
+      title: "Custom Desktop Navbar",
       href: "/creative/custom_nav",
-      description: "My own custom navbar",
+      description: "Navbar with spring hover animation",
     }
   ];
 
