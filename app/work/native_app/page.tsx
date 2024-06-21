@@ -17,6 +17,20 @@ export default function Page() {
         </p>
       </div>
 
+      <div className="flex mb-8">
+        <p className="text-sm self-end leading-snug text-muted-foreground">
+          I contributed to developing a new native experience using the Ionic
+          framework. This project involved rapidly rebuilding features from the
+          old native app while adapting to an ongoing development process. My
+          primary focus was upgrading the app&apos;s design, enhancing its visual
+          appeal and user experience. Additionally, I spearheaded the
+          implementation of Journeys, a key feature in the new app. This
+          project showcased my ability to quickly adapt to new technologies,
+          work efficiently in a fast-paced environment, and balance design
+          improvements with feature development.
+        </p>
+      </div>
+
       <div className="flex flex-wrap pb-6 gap-1">
         {techStack.map((tech, index) => {
           return <StackBadge key={tech + index} title={tech} />;
@@ -24,10 +38,9 @@ export default function Page() {
       </div>
 
       <div className="py-3">
-        <h2 className="mt-10 scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight transition-colors first:mt-0">
-          Overview
+        <h2 className="mt-10 scroll-m-20 pb-2 text-2xl font-semibold tracking-tight transition-colors first:mt-0">
+          Virtual Showcase
         </h2>
-        <Separator />
         <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
           <Image
             src="/assets/work/native_one.png"

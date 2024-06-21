@@ -16,6 +16,12 @@ export default function Page() {
         </p>
       </div>
 
+      <div className="flex mb-8">
+        <p className="text-sm self-end leading-snug text-muted-foreground">
+          This is a custom desktop navbar using spring animation from Framer Motion.
+        </p>
+      </div>
+
       <div className="flex flex-wrap pb-6 gap-1">
         {techStack.map((tech, index) => {
           return <StackBadge key={tech + index} title={tech} />;

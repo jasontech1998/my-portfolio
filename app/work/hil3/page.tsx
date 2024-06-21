@@ -17,6 +17,19 @@ export default function Page() {
         </p>
       </div>
 
+      <div className="flex mb-8">
+        <p className="text-sm self-end leading-snug text-muted-foreground">
+          I contributed to the development of HIL3, an enhanced
+          version of EAB&apos;s custom JSON parser language for rapid view and form
+          creation. Working closely with my manager, I leveraged my
+          perspective as a newer engineer to improve readability and simplify
+          syntax. This resulted in reduced code complexity and easier adoption
+          by new team members. I helped design and implement these improvements,
+          as well as integrate HIL3 across multiple products, demonstrating my
+          ability to quickly grasp and enhance complex systems.
+        </p>
+      </div>
+
       <div className="flex flex-wrap pb-6 gap-1">
         {techStack.map((tech, index) => {
           return <StackBadge key={tech + index} title={tech} />;
@@ -24,16 +37,15 @@ export default function Page() {
       </div>
 
       <div className="py-3">
-        <h2 className="mt-10 scroll-m-20 border-b pb-2 text-2xl font-semibold tracking-tight transition-colors first:mt-0">
-          Overview
+        <h2 className="mt-10 scroll-m-20 pb-2 text-2xl font-semibold tracking-tight transition-colors first:mt-0">
+          Virtual Showcase
         </h2>
-        <Separator />
         <div className="flex flex-col justify-center items-center">
           <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
             <Image
               src="/assets/work/hil_one.png"
-              width={550}
-              height={550}
+              width={750}
+              height={750}
               alt="Picture of HIL 3 template view one"
               priority
             />
@@ -41,8 +53,8 @@ export default function Page() {
           <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
             <Image
               src="/assets/work/hil_three.png"
-              width={550}
-              height={550}
+              width={750}
+              height={750}
               alt="Picture of HIL 3 template view three"
               priority
             />
