@@ -28,33 +28,43 @@ export default function Page() {
           Overview
         </h2>
         <Separator />
-
-        <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
-          <Image
-            src="/assets/work/ui_one.png"
-            width={500}
-            height={500}
-            alt="Picture of UI Library one"
-            priority
-          />
-        </div>
-        <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
-          <Image
-            src="/assets/work/ui_two.png"
-            width={500}
-            height={500}
-            alt="Picture of UI Library two"
-            priority
-          />
-        </div>
-        <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
-          <Image
-            src="/assets/work/ui_three.png"
-            width={500}
-            height={500}
-            alt="Picture of UI Library three"
-            priority
-          />
+        <div className="flex flex-col justify-center items-center">
+          <div
+            className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2"
+            style={{ width: "550px", height: "550px" }}
+          >
+            <Image
+              src="/assets/work/ui_one.png"
+              width={550}
+              height={550}
+              alt="Picture of UI Library one"
+              priority
+            />
+          </div>
+          <div
+            className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2"
+            style={{ width: "550px", height: "550px" }}
+          >
+            <Image
+              src="/assets/work/ui_two.png"
+              width={550}
+              height={550}
+              alt="Picture of UI Library two"
+              priority
+            />
+          </div>
+          <div
+            className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2"
+            style={{ width: "550px", height: "550px" }}
+          >
+            <Image
+              src="/assets/work/ui_three.png"
+              width={550}
+              height={550}
+              alt="Picture of UI Library three"
+              priority
+            />
+          </div>
         </div>
       </div>
     </section>

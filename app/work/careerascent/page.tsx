@@ -29,8 +29,8 @@ export default function Page() {
         <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
           <Image
             src="/assets/work/careerascent.png"
-            width={550}
-            height={550}
+            width={750}
+            height={650}
             alt="Picture of CareerAscent home page"
             priority
           />

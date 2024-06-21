@@ -35,7 +35,7 @@ export default function Page() {
           Overview
         </h2>
         <Separator />
-        <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
+        <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2" style={{width: "650px", height: "550px"}}>
           <video width="650" height="550" controls autoPlay loop muted>
             <source src="/assets/projects/spotify_shared.mp4" type="video/mp4" />
             Your browser does not support the video tag.

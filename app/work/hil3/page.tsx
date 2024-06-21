@@ -9,8 +9,12 @@ export default function Page() {
   return (
     <section>
       <div className="flex flex-wrap justify-between mb-8">
-        <h1 className="text-2xl self-end font-semibold tracking-tighter">HIL3</h1>
-        <p className="text-sm self-end leading-snug text-muted-foreground">July 2022</p>
+        <h1 className="text-2xl self-end font-semibold tracking-tighter">
+          HIL3
+        </h1>
+        <p className="text-sm self-end leading-snug text-muted-foreground">
+          July 2022
+        </p>
       </div>
 
       <div className="flex flex-wrap pb-6 gap-1">
@@ -24,32 +28,31 @@ export default function Page() {
           Overview
         </h2>
         <Separator />
-        <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
-          <Image
-            src="/assets/work/hil_one.png"
-            width={500}
-            height={500}
-            alt="Picture of HIL 3 template view one"
-            priority
-          />
-        </div>
-        <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
-          <Image
-            src="/assets/work/hil_two.png"
-            width={500}
-            height={500}
-            alt="Picture of HIL 3 template view two"
-            priority
-          />
-        </div>
-        <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
-          <Image
-            src="/assets/work/hil_three.png"
-            width={500}
-            height={500}
-            alt="Picture of HIL 3 template view three"
-            priority
-          />
+        <div className="flex flex-col justify-center items-center">
+          <div
+            className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2"
+            style={{ width: "550px", height: "550px" }}
+          >
+            <Image
+              src="/assets/work/hil_one.png"
+              width={550}
+              height={550}
+              alt="Picture of HIL 3 template view one"
+              priority
+            />
+          </div>
+          <div
+            className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2"
+            style={{ width: "550px", height: "550px" }}
+          >
+            <Image
+              src="/assets/work/hil_three.png"
+              width={550}
+              height={550}
+              alt="Picture of HIL 3 template view three"
+              priority
+            />
+          </div>
         </div>
       </div>
     </section>

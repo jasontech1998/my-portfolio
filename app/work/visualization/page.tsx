@@ -12,7 +12,9 @@ export default function Page() {
         <h1 className="text-2xl self-end font-semibold tracking-tighter">
           Visualization
         </h1>
-        <p className="text-sm self-end leading-snug text-muted-foreground">January 2023</p>
+        <p className="text-sm self-end leading-snug text-muted-foreground">
+          January 2023
+        </p>
       </div>
 
       <div className="flex flex-wrap pb-6 gap-1">
@@ -26,40 +28,40 @@ export default function Page() {
           Overview
         </h2>
         <Separator />
-        <div className="grid grid-cols-2 gap-4 mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
-          <div className="flex justify-center">
+        <div className="flex flex-col justify-center items-center">
+          <div
+            className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2"
+            style={{ width: "550px", height: "550px" }}
+          >
             <Image
               src="/assets/work/barchart.png"
-              width={500}
-              height={500}
-              alt="Picture of bar chart"
+              width={550}
+              height={550}
+              alt="Picture of Bar Chart"
               priority
             />
           </div>
-          <div className="flex justify-center">
+          <div
+            className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2"
+            style={{ width: "550px", height: "550px" }}
+          >
             <Image
               src="/assets/work/barchart_detailed.png"
-              width={500}
-              height={500}
-              alt="Picture of detailed bar chart"
+              width={550}
+              height={550}
+              alt="Picture of detailed Bar Chart"
               priority
             />
           </div>
-          <div className="flex justify-center">
+          <div
+            className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2"
+            style={{ width: "550px", height: "550px" }}
+          >
             <Image
               src="/assets/work/linechart.png"
-              width={500}
-              height={500}
-              alt="Picture of line chart"
-              priority
-            />
-          </div>
-          <div className="flex justify-center">
-            <Image
-              src="/assets/work/piechart.png"
-              width={500}
-              height={500}
-              alt="Picture of pie chart"
+              width={550}
+              height={550}
+              alt="Picture of Line Chart"
               priority
             />
           </div>
