@@ -42,15 +42,14 @@ export default function Page() {
           Virtual Showcase
         </h2>
         <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
-          <Image
-            src="/assets/projects/podspot.png"
-            width={750}
-            height={750}
-            alt="Picture of Podspot landing page"
-            priority
-          />
+          <video width="650" height="750" controls autoPlay loop muted>
+            <source
+              src="/assets/projects/podspot.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
         </div>
-        <p className="leading-7 mt-6 mb-4"></p>
       </div>
     </section>
   );
