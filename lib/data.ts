@@ -39,7 +39,7 @@ export const workData: { title: string; href: string; description: string }[] =
     {
       title: "CareerAscent",
       href: "/work/careerascent",
-      description: "Building our new product from scratch",
+      description: "Building our new product from 0 -> 1",
     },
     {
       title: "Native App",
