@@ -1,5 +1,5 @@
 import { StackBadge } from "@/components/StackBadge";
-import CustomNav from "@/components/creative/CustomNav";
+import CustomStackItems from "@/components/creative/CustomStackItems";
 
 export default function Page() {
   const techStack = ["React", "Typescript", "Framer Motion", "Tailwind"];
@@ -8,7 +8,7 @@ export default function Page() {
     <section>
       <div className="flex flex-wrap justify-between mb-8">
         <h1 className="text-2xl self-end font-semibold tracking-tighter">
-          Custom Desktop Navbar
+          Custom
         </h1>
         <p className="text-sm self-end leading-snug text-muted-foreground">
           June 2024
@@ -17,7 +17,7 @@ export default function Page() {
 
       <div className="flex mb-8">
         <p className="text-sm self-end leading-snug text-muted-foreground">
-          This is a custom desktop navbar using spring animation from Framer Motion.
+          Description
         </p>
       </div>
 
@@ -27,8 +27,8 @@ export default function Page() {
         })}
       </div>
 
-      <div className="flex mt-4 p-4 h-64 justify-center items-center rounded-md border-gray-200 border-2">
-        <CustomNav />
+      <div className="flex mt-4 p-4 justify-center items-center rounded-md border-gray-200 border-2">
+        <CustomStackItems />
       </div>
     </section>
   );

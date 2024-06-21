@@ -6,7 +6,7 @@ import { useState } from "react";
 
 import { workData } from "@/lib/data";
 
-export default function Example() {
+export default function CustomStackItems() {
   const animatedItems = {
     hidden: { opacity: 0, y: 20 },
     visible: {

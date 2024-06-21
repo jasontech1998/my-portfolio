@@ -54,6 +54,11 @@ export const workData: { title: string; href: string; description: string }[] =
       title: "Custom Desktop Navbar",
       href: "/creative/custom_nav",
       description: "Navbar with spring hover animation",
+    },
+    {
+      title: "Custom Stack Items",
+      href: "/creative/custom_stack_items",
+      description: "Stacked nav items with custom animation",
     }
   ];
 

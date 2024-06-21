@@ -105,7 +105,7 @@ export function Navbar() {
                   >
                     <Palette />
                     <div className="mb-2 mt-4 text-lg font-medium">
-                      My Creative Components
+                      Creative
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
                       {`Collection of my custom components`}
