@@ -4,7 +4,7 @@ import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 
 export default function Page() {
-  const techStack = ["LitElement", "Chartjs", "Typescript"];
+  const techStack = ["LitElement", "Chartjs", "Typescript", "HIL3"];
 
   return (
     <section>

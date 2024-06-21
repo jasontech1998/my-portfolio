@@ -41,7 +41,7 @@ export default function Page() {
           Virtual Showcase
         </h2>
         <div className="flex flex-col justify-center items-center">
-          <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
+          {/* <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
             <Image
               src="/assets/work/hil_one.png"
               width={750}
@@ -49,7 +49,7 @@ export default function Page() {
               alt="Picture of HIL 3 template view one"
               priority
             />
-          </div>
+          </div> */}
           <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
             <Image
               src="/assets/work/hil_three.png"
