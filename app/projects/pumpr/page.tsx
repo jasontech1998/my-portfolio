@@ -43,6 +43,15 @@ export default function Page() {
             priority
           />
         </div>
+        <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
+          <Image
+            src="/assets/projects/pumpr_design.jpeg"
+            width={750}
+            height={750}
+            alt="Picture of Pumpr landing page"
+            priority
+          />
+        </div>
       </div>
     </section>
   );
