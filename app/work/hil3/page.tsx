@@ -40,21 +40,39 @@ export default function Page() {
           Virtual Showcase
         </h2>
         <div className="flex flex-col justify-center items-center">
-          {/* <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
-            <Image
-              src="/assets/work/hil_one.png"
-              width={750}
-              height={750}
-              alt="Picture of HIL 3 template view one"
-              priority
-            />
-          </div> */}
           <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
             <Image
-              src="/assets/work/hil_three.png"
+              src="/assets/work/hil_login.png"
               width={750}
               height={750}
-              alt="Picture of HIL 3 template view three"
+              alt="Picture of HIL 3 template login view"
+              priority
+            />
+          </div>
+          <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
+            <Image
+              src="/assets/work/hil_chart.png"
+              width={750}
+              height={750}
+              alt="Picture of HIL 3 template chart view"
+              priority
+            />
+          </div>
+          <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
+            <Image
+              src="/assets/work/hil_entity.png"
+              width={750}
+              height={750}
+              alt="Picture of HIL 3 template entity view"
+              priority
+            />
+          </div>
+          <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
+            <Image
+              src="/assets/work/hil_render.png"
+              width={750}
+              height={750}
+              alt="Picture of HIL 3 template render types view"
               priority
             />
           </div>
