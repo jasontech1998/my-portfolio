@@ -28,7 +28,6 @@ export default function CustomNav() {
                   type: "spring",
                 }}
                 className="absolute inset-0 -z-10 p-3 w-full rounded-md bg-gray-100"
-                style={{ bottom: "0px", left: "0px", width: "100%" }}
                 layoutId="highlight"
               />
             ) : null}
