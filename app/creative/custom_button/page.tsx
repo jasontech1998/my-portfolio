@@ -1,5 +1,5 @@
 import { StackBadge } from "@/components/StackBadge";
-import Example from "@/components/playground/example";
+import AnimatedButton from "@/components/creative/AnimatedButton";
 
 export default function Page() {
   const techStack = ["React", "Typescript", "Framer Motion", "Tailwind"];
@@ -8,7 +8,7 @@ export default function Page() {
     <section>
       <div className="flex flex-wrap justify-between mb-8">
         <h1 className="text-2xl self-end font-semibold tracking-tighter">
-          Custom
+          Custom Animated Button
         </h1>
         <p className="text-sm self-end leading-snug text-muted-foreground">
           June 2024
@@ -17,7 +17,7 @@ export default function Page() {
 
       <div className="flex mb-8">
         <p className="text-sm self-end leading-snug text-muted-foreground">
-          Description
+        This is a custom button with loading animation.
         </p>
       </div>
 
@@ -28,7 +28,7 @@ export default function Page() {
       </div>
 
       <div className="flex mt-4 p-4 justify-center items-center rounded-md border-gray-200 border-2">
-        <Example />
+        <AnimatedButton />
       </div>
     </section>
   );

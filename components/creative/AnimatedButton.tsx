@@ -14,7 +14,7 @@ const buttonVariants = {
 
 const transition = { duration: 0.2 };
 
-const Button = () => {
+export default function AnimatedButton() {
   const [buttonState, setButtonState] = useState("idle");
 
   const handleClick = () => {
@@ -88,6 +88,4 @@ const Button = () => {
       </AnimatePresence>
     </button>
   );
-};
-
-export default Button;
+}

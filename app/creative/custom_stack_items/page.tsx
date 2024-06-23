@@ -1,5 +1,5 @@
 import { StackBadge } from "@/components/StackBadge";
-import Example from "@/components/playground/example";
+import CustomStackItems from "@/components/creative/CustomStackItems";
 
 export default function Page() {
   const techStack = ["React", "Typescript", "Framer Motion", "Tailwind"];
@@ -28,7 +28,7 @@ export default function Page() {
       </div>
 
       <div className="flex mt-4 p-4 justify-center items-center rounded-md border-gray-200 border-2">
-        <Example />
+        <CustomStackItems />
       </div>
     </section>
   );

@@ -59,6 +59,11 @@ export const workData: { title: string; href: string; description: string }[] =
       title: "Custom Stack Items",
       href: "/creative/custom_stack_items",
       description: "Stacked nav items with custom animation",
+    },
+    {
+      title: "Custom Animated Button",
+      href: "/creative/custom_button",
+      description: "Animated loading button with custom animation",
     }
   ];
 
