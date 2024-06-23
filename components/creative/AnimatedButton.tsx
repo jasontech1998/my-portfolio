@@ -26,7 +26,7 @@ export default function AnimatedButton() {
     <button
       onClick={handleClick}
       disabled={buttonState !== "idle"}
-      className="w-32 h-10 relative bg-gray-800 text-white rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-75 overflow-hidden"
+      className="w-32 h-10 relative font-medium bg-gray-800 text-white rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-75 overflow-hidden"
     >
       <AnimatePresence mode="wait">
         {buttonState === "idle" && (

@@ -30,6 +30,27 @@ export function Navbar() {
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
+          <Link href="/work" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              Work
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <Link href="/projects" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              Projects
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <Link href="/creative" legacyBehavior passHref>
+            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+              Creative
+            </NavigationMenuLink>
+          </Link>
+        </NavigationMenuItem>
+        {/* <NavigationMenuItem>
           <NavigationMenuTrigger>Work</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-2 p-6 w-[300px] sm:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
@@ -124,7 +145,7 @@ export function Navbar() {
               ))}
             </ul>
           </NavigationMenuContent>
-        </NavigationMenuItem>
+        </NavigationMenuItem> */}
       </NavigationMenuList>
     </NavigationMenu>
   );
