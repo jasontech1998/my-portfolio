@@ -27,7 +27,7 @@ export default function Page() {
         })}
       </div>
 
-      <div className="flex mt-4 p-4 justify-center items-center rounded-md border-gray-200 border-2">
+      <div className="flex mt-4 p-4 justify-center items-center rounded-md border-accent border-2">
         <CustomStackItems />
       </div>
     </section>

@@ -40,7 +40,7 @@ export default function Page() {
           Virtual Showcase
         </h2>
         <div className="flex flex-col justify-center items-center">
-          <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
+          <div className="flex mt-4 p-4 justify-center rounded-md border-accent border-2">
             <Image
               src="/assets/work/hil_login.png"
               width={750}
@@ -49,7 +49,7 @@ export default function Page() {
               priority
             />
           </div>
-          <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
+          <div className="flex mt-4 p-4 justify-center rounded-md border-accent border-2">
             <Image
               src="/assets/work/hil_chart.png"
               width={750}
@@ -58,7 +58,7 @@ export default function Page() {
               priority
             />
           </div>
-          <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
+          <div className="flex mt-4 p-4 justify-center rounded-md border-accent border-2">
             <Image
               src="/assets/work/hil_entity.png"
               width={750}
@@ -67,7 +67,7 @@ export default function Page() {
               priority
             />
           </div>
-          <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
+          <div className="flex mt-4 p-4 justify-center rounded-md border-accent border-2">
             <Image
               src="/assets/work/hil_render.png"
               width={750}

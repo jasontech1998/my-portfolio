@@ -40,7 +40,7 @@ export default function Page() {
         <h2 className="mt-10 scroll-m-20 pb-2 text-2xl font-semibold tracking-tight transition-colors first:mt-0">
           Virtual Showcase
         </h2>
-        <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
+        <div className="flex mt-4 p-4 justify-center rounded-md border-accent border-2">
           <Image
             src="/assets/work/native_one.png"
             width={500}
@@ -49,7 +49,7 @@ export default function Page() {
             priority
           />
         </div>
-        <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
+        <div className="flex mt-4 p-4 justify-center rounded-md border-accent border-2">
           <Image
             src="/assets/work/native_two.png"
             width={500}
@@ -58,7 +58,7 @@ export default function Page() {
             priority
           />
         </div>
-        <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
+        <div className="flex mt-4 p-4 justify-center rounded-md border-accent border-2">
           <Image
             src="/assets/work/native_three.png"
             width={500}

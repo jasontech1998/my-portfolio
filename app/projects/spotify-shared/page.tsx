@@ -38,7 +38,7 @@ export default function Page() {
         <h2 className="mt-10 scroll-m-20 pb-2 text-2xl font-semibold tracking-tight transition-colors first:mt-0">
           Virtual Showcase
         </h2>
-        <div className="flex mt-4 p-4 justify-center rounded-md border-gray-200 border-2">
+        <div className="flex mt-4 p-4 justify-center rounded-md border-accent border-2">
           <video width="650" height="750" controls autoPlay loop muted>
             <source
               src="/assets/projects/spotify_shared.mp4"

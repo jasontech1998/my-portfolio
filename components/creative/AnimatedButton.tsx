@@ -26,7 +26,11 @@ export default function AnimatedButton() {
     <button
       onClick={handleClick}
       disabled={buttonState !== "idle"}
-      className="w-32 h-10 relative font-medium bg-gray-800 text-white rounded-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-75 overflow-hidden"
+      className="w-32 h-10 relative font-medium rounded-md overflow-hidden
+             bg-primary text-primary-foreground
+             hover:bg-primary/90
+             focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2
+             disabled:pointer-events-none disabled:opacity-50"
     >
       <AnimatePresence mode="wait">
         {buttonState === "idle" && (
@@ -52,7 +56,7 @@ export default function AnimatedButton() {
             className="absolute inset-0 flex items-center justify-center"
           >
             <svg
-              className="animate-spin h-5 w-5 text-white"
+              className="animate-spin h-5 w-5 text-primary-foreground"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
