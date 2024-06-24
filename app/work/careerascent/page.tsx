@@ -47,9 +47,6 @@ export default function Page() {
             width={750}
             height={650}
             alt="Picture of CareerAscent home page"
-            style={{
-              maskImage: `linear-gradient(to top, transparent, black 20%)`,
-            }}
             priority
           />
         </div>
