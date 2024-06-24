@@ -58,13 +58,18 @@ export const workData: { title: string; href: string; description: string }[] =
     {
       title: "Custom Stack Items",
       href: "/creative/custom_stack_items",
-      description: "Stacked nav items with custom animation",
+      description: "Stacked nav items with custom hover animation",
     },
     {
       title: "Custom Animated Button",
       href: "/creative/custom_button",
-      description: "Animated loading button with custom animation",
-    }
+      description: "Button with custom loading animation",
+    },
+    {
+      title: "Custom Hover Card",
+      href: "/creative/custom_hover_card",
+      description: "Card that shows additional content on hover",
+    },
   ];
 
 

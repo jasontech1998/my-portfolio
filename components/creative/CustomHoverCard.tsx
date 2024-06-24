@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
@@ -30,7 +31,7 @@ const bottomContentVariant: Variants = {
   },
 };
 
-const Example: React.FC<CardProps> = ({ image_path, subtitle, stats }) => {
+const CustomHoverCard: React.FC<CardProps> = ({ image_path, subtitle, stats }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -51,10 +52,12 @@ const Example: React.FC<CardProps> = ({ image_path, subtitle, stats }) => {
             src={image_path}
             width={76}
             height={32}
-            alt="Stripe logo"
+            alt="Main card image"
             className="h-8 mb-4"
           />
-          <p className="text-md self-end font-medium text-muted-foreground mr-7">{subtitle}</p>
+          <p className="text-md self-end font-medium text-muted-foreground mr-7">
+            {subtitle}
+          </p>
         </div>
       </motion.div>
       <motion.div
@@ -77,4 +80,4 @@ const Example: React.FC<CardProps> = ({ image_path, subtitle, stats }) => {
   );
 };
 
-export default Example;
+export default CustomHoverCard;
