@@ -19,14 +19,11 @@ export default function Page() {
       <div className="flex mb-8">
         <p className="text-sm self-end leading-snug text-muted-foreground">
           I led the comprehensive upgrade of EAB&apos;s visualization library,
-          overseeing the project from research to implementation. After
-          selecting the most suitable open-source library, I crafted each chart
-          type from scratch. I created and presented compelling demos to
-          showcase the improvements to the platform team. Taking on an
-          educational role, I guided other developers in effectively using these
-          upgraded charts. The new visualizations were successfully integrated
-          across multiple products. This project highlighted my ability to lead
-          complex technical initiatives and drive adoption of new tools.
+          managing the project from research to implementation. I selected and
+          customized an open-source library, crafted each chart type, and
+          demonstrated improvements to the platform team. I mentored developers
+          on utilizing the new charts, which we successfully integrated across
+          multiple products.
         </p>
       </div>
 

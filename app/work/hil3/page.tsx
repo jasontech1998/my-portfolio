@@ -18,14 +18,12 @@ export default function Page() {
 
       <div className="flex mb-8">
         <p className="text-sm self-end leading-snug text-muted-foreground">
-          I contributed to the development of HIL3, an enhanced
-          version of EAB&apos;s custom JSON parser language for rapid view and form
-          creation. Working closely with my manager, I leveraged my
-          perspective as a newer engineer to improve readability and simplify
-          syntax. This resulted in reduced code complexity and easier adoption
-          by new team members. I helped design and implement these improvements,
-          as well as integrate HIL3 across multiple products, demonstrating my
-          ability to quickly grasp and enhance complex systems.
+          I helped develop HIL3, an improved version of EAB&apos;s custom JSON parser
+          language. I leveraged my fresh perspective to enhance readability and
+          simplify syntax, reducing code complexity and easing adoption. I
+          contributed to design, implementation, and integration across multiple
+          products, demonstrating my ability to quickly grasp and improve
+          complex systems.
         </p>
       </div>
 

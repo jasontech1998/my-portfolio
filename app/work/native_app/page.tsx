@@ -20,13 +20,7 @@ export default function Page() {
         <p className="text-sm self-end leading-snug text-muted-foreground">
           I contributed to developing a new native experience using the Ionic
           framework. This project involved rapidly rebuilding features from the
-          old native app while adapting to an ongoing development process. My
-          primary focus was upgrading the app&apos;s design, enhancing its visual
-          appeal and user experience. Additionally, I spearheaded the
-          implementation of Journeys, a key feature in the new app. This
-          project showcased my ability to quickly adapt to new technologies,
-          work efficiently in a fast-paced environment, and balance design
-          improvements with feature development.
+          old native app while adapting to an ongoing development process.
         </p>
       </div>
 

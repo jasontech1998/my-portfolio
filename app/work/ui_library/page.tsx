@@ -18,11 +18,10 @@ export default function Page() {
 
       <div className="flex mb-8">
         <p className="text-sm self-end leading-snug text-muted-foreground">
-          As a Associate Front End Engineer on the Platform Team at EAB, I played a
-          pivotal role in developing and maintaining our internal UI component
-          library. This critical resource was utilized by multiple product teams
-          across the organization, enhancing consistency and efficiency in our
-          development processes.
+          I played a pivotal role in developing and maintaining our internal UI
+          component library. This critical resource was utilized by multiple
+          product teams across the organization, enhancing consistency and
+          efficiency in our development processes.
         </p>
       </div>
 

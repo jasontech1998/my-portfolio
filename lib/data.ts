@@ -22,19 +22,9 @@ export const projects: { title: string; href: string; description: string }[] =
 export const workData: { title: string; href: string; description: string }[] =
   [
     {
-      title: "UI Library",
-      href: "/work/ui_library",
-      description: "Comprehensive internal UI components library",
-    },
-    {
-      title: "HIL3",
-      href: "/work/hil3",
-      description: "Creating and enhancing our custom JSON parser language",
-    },
-    {
-      title: "Visualization",
-      href: "/work/visualization",
-      description: "Upgrading our visualization library",
+      title: "Native App",
+      href: "/work/native_app",
+      description: "Building a new native experience for Navigate",
     },
     {
       title: "CareerAscent",
@@ -42,13 +32,23 @@ export const workData: { title: string; href: string; description: string }[] =
       description: "Building our new product from 0 -> 1",
     },
     {
-      title: "Native App",
-      href: "/work/native_app",
-      description: "Building a new native experience for Navigate",
+      title: "Visualization",
+      href: "/work/visualization",
+      description: "Upgrading our visualization library",
+    },
+    {
+      title: "HIL3",
+      href: "/work/hil3",
+      description: "Creating and enhancing our custom JSON parser language",
+    },
+    {
+      title: "UI Library",
+      href: "/work/ui_library",
+      description: "Comprehensive internal UI components library",
     },
   ];
 
-  export const creative: { title: string; href: string; description: string }[] =
+export const creative: { title: string; href: string; description: string }[] =
   [
     {
       title: "Custom Desktop Navbar",
@@ -71,5 +71,3 @@ export const workData: { title: string; href: string; description: string }[] =
       description: "Card that shows additional content on hover",
     },
   ];
-
-

@@ -18,16 +18,10 @@ export default function Page() {
 
       <div className="flex mb-8">
         <p className="text-sm self-end leading-snug text-muted-foreground">
-          I played a pivotal role in developing CareerAscent, a new product
-          built from 0 -{'>'} 1. As a key team member, I contributed to
-          planning the app&apos;s architecture, ultimately selecting React, Material
-          UI, and Tailwind CSS for the frontend. This project differed from my
-          platform team experience, resembling a startup environment with tight
-          deadlines and rapid development. I demonstrated adaptability in this
-          fast-paced setting, efficiently implementing features and meeting
-          challenging timelines. This experience showcased my ability to thrive
-          in diverse development environments and contribute to the full
-          lifecycle of a new product.
+          I held a key role in developing CareerAscent from scratch,
+          architecting the app using React, Material UI, and Tailwind. This
+          startup-like project demanded rapid development and adaptability to
+          tight deadlines, contrasting with previous platform team experiences.
         </p>
       </div>
 
