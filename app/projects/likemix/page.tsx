@@ -2,7 +2,7 @@ import { GithubButton } from "@/components/GithubButton";
 import { StackBadge } from "@/components/StackBadge";
 
 export default function Page() {
-  const repoHref = "https://github.com/jasontech1998/spotify-share";
+  const repoHref = "https://github.com/jasontech1998/likemix";
   const techStack = [
     "Nextjs",
     "React",
@@ -18,13 +18,13 @@ export default function Page() {
     <section>
       <div className="flex flex-wrap justify-between mb-8">
         <h1 className="text-2xl self-end font-semibold tracking-tighter">
-          Spotify Shared
+          LikeMix
         </h1>
         <GithubButton href={repoHref} />
       </div>
       <div className="flex mb-8">
         <p className="text-sm self-end leading-snug text-muted-foreground">
-          Spotify Shared is an app designed to automate the sharing of your
+          LikeMix is an app designed to automate the sharing of your
           liked songs from any album. This tool makes it easy for music
           enthusiasts to share their favorite tracks with friends effortlessly.
         </p>
@@ -41,7 +41,7 @@ export default function Page() {
         <div className="flex mt-4 p-4 justify-center rounded-md border-accent border-2">
           <video width="650" height="750" controls autoPlay loop muted>
             <source
-              src="/assets/projects/spotify_shared.mp4"
+              src="/assets/projects/likemix_demo.mp4"
               type="video/mp4"
             />
             Your browser does not support the video tag.
