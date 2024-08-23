@@ -7,6 +7,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import CalendlyLink from "./CalendlyLink";
 
 export const Connect = () => {
   return (
@@ -111,6 +112,8 @@ export const Connect = () => {
             <p>Visit Twitter Profile</p>
           </TooltipContent>
         </Tooltip>
+
+        <CalendlyLink />
       </TooltipProvider>
     </div>
   );
