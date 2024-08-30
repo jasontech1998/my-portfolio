@@ -1,6 +1,18 @@
 export const projects: { title: string; href: string; description: string }[] =
   [
     {
+      title: "FestiFaves",
+      href: "/projects/festifaves",
+      description:
+        "FestiFaves leverages AI to curate personalized Spotify playlists based on festival lineups, enhancing your music discovery experience",
+    },
+    {
+      title: "Real Time Trivia Game",
+      href: "/projects/triviagame",
+      description:
+        "A fast-paced, real-time game challenging players to test their knowledge across diverse topics",
+    },
+    {
       title: "LikeMix",
       href: "/projects/likemix",
       description:
