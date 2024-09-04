@@ -1,6 +1,12 @@
 export const projects: { title: string; href: string; description: string }[] =
   [
     {
+      title: "Enhanced Linear Dashboard",
+      href: "/projects/lineardashboard",
+      description:
+        "A Next.js project featuring a Linear-inspired dashboard with advanced due date indicators for efficient task management.",
+    },
+    {
       title: "FestiFaves",
       href: "/projects/festifaves",
       description:
