@@ -1,4 +1,4 @@
-import { GithubButton } from "@/components/GithubButton";
+import { TypingButton } from "@/components/TypingButton";
 import { StackBadge } from "@/components/StackBadge";
 
 import Image from "next/image";
@@ -14,7 +14,7 @@ export default function Page() {
         <h1 className="text-2xl self-end font-semibold tracking-tighter">
           Pumpr
         </h1>
-        <GithubButton href={repoHref} />
+        <TypingButton href={repoHref} text="Github" />
       </div>
 
       <div className="flex mb-8">
