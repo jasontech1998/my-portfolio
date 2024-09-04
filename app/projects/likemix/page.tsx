@@ -43,6 +43,9 @@ export default function Page() {
           </h2>
           <TypingButton href={demoHref} text="Demo" />
         </div>
+        <p className="text-xs text-muted-foreground mb-4 italic">
+          Note: To use the demo, please contact me for Spotify API access (currently in dev mode).
+        </p>
         <div className="flex mt-4 p-4 justify-center rounded-md border-accent border-2">
           <video width="650" height="750" controls autoPlay loop muted>
             <source src="/assets/projects/likemix_demo.mp4" type="video/mp4" />
