@@ -69,6 +69,11 @@ export const workData: { title: string; href: string; description: string }[] =
 export const creative: { title: string; href: string; description: string }[] =
   [
     {
+      title: "Custom Chat",
+      href: "/creative/custom_chat",
+      description: "AI Chat about Jason's resume",
+    },
+    {
       title: "Custom Desktop Navbar",
       href: "/creative/custom_nav",
       description: "Navbar with spring hover animation",
