@@ -37,12 +37,11 @@ export async function POST(request: NextRequest) {
       includeMetadata: true,
     });
 
-    // Format Pinecone results for the prompt
     const formattedResults = searchResponse.matches
       .map((match, index) => {
         return `Result ${index + 1}:
                 ID: ${match.id}
-                Score: ${match.score.toFixed(4)}
+                Score: ${match.score?.toFixed(4) ?? 'N/A'}
                 Metadata: ${JSON.stringify(match.metadata)}
                 `;
       })
@@ -62,7 +61,7 @@ Please answer this question about Jason: ${text}`;
         { role: "user", content: prompt },
       ],
       model: "gpt-4",
-      max_tokens: 150, // This helps ensure the response stays under 100 words
+      max_tokens: 150,
     });
 
     return NextResponse.json({
@@ -70,9 +69,8 @@ Please answer this question about Jason: ${text}`;
       analysis: completion.choices[0].message.content,
     });
   } catch (error) {
-    console.error("Detailed error:", error);
     return NextResponse.json(
-      { message: "An error occurred", error: error.toString() },
+      { message: "An error occurred", error: error instanceof Error ? error.message : String(error) },
       { status: 500 }
     );
   }
