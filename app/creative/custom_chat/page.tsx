@@ -21,6 +21,10 @@ export default function Page() {
         </p>
       </div>
 
+      <p className="text-xs text-muted-foreground mb-4 italic">
+          Note: Recently deleted OpenAI API key due to data breach.
+        </p>
+
       <div className="flex flex-wrap pb-6 gap-1">
         {techStack.map((tech, index) => {
           return <StackBadge key={tech + index} title={tech} />;
