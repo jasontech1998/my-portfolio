@@ -69,6 +69,11 @@ export const workData: { title: string; href: string; description: string }[] =
 export const creative: { title: string; href: string; description: string }[] =
   [
     {
+      title: "Custom Animated Counter",
+      href: "/creative/custom_animated_counter",
+      description: "Incrementing number ticker",
+    },
+    {
       title: "Custom Chat",
       href: "/creative/custom_chat",
       description: "AI Chat about Jason's resume",
