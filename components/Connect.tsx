@@ -18,7 +18,7 @@ export const Connect = () => {
             <a
               rel="noopener noreferrer"
               target="_blank"
-              href="/assets/JasonResume2025.pdf"
+              href="/assets/JasonYuResume2025.pdf"
               className={
                 "block select-none space-y-1 rounded-md p-3 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
               }
