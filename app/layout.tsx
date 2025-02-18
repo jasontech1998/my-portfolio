@@ -10,9 +10,9 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], display: 'swap' });
 
 export const metadata: Metadata = {
-  title: "Jason Yu | Front-End Engineer",
-  description: "Portfolio of Jason Yu, a front-end engineer based in Bay Area, CA. Showcasing projects, work experience, and creative designs.",
-  keywords: ["Jason Yu", "Front-End Engineer", "React", "Next.js", "TypeScript", "Portfolio"],
+  title: "Jason Yu | Software Engineer",
+  description: "Portfolio of Jason Yu, a software engineer based in Bay Area, CA. Showcasing projects, work experience, and creative designs.",
+  keywords: ["Jason Yu", "Software Engineer", "React", "Next.js", "TypeScript", "Portfolio"],
   authors: [{ name: "Jason Yu" }],
   creator: "Jason Yu",
   openGraph: {
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.jasonyu.app",
     siteName: "Jason Yu Portfolio",
-    title: "Jason Yu | Front-End Engineer",
-    description: "Portfolio of Jason Yu, a front-end engineer based in Bay Area, CA. Showcasing projects, work experience, and creative designs.",
+    title: "Jason Yu | Software Engineer",
+    description: "Portfolio of Jason Yu, a software engineer based in Bay Area, CA. Showcasing projects, work experience, and creative designs.",
     images: [
       {
         url: "https://www.jasonyu.app/og-image.jpg",
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jason Yu | Front-End Engineer",
-    description: "Portfolio of Jason Yu, a front-end engineer based in Bay Area, CA. Showcasing projects, work experience, and creative designs.",
+    title: "Jason Yu | Software Engineer",
+    description: "Portfolio of Jason Yu, a software engineer based in Bay Area, CA. Showcasing projects, work experience, and creative designs.",
     creator: "@lockedinagain",
     images: ["https://www.jasonyu.app/twitter-image.jpg"],
   },
