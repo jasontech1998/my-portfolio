@@ -17,7 +17,7 @@ export default function Page() {
 
       <div className="flex mb-8">
         <p className="text-sm self-end leading-snug text-muted-foreground">
-          AI Chat about Jason&apos;s resume
+          AI Chat about my resume
         </p>
       </div>
 

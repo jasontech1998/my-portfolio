@@ -86,7 +86,7 @@ export const creative: { title: string; href: string; description: string }[] =
     {
       title: "Custom Chat",
       href: "/creative/custom_chat",
-      description: "AI Chat about Jason's resume",
+      description: "AI Chat about my resume",
     },
     {
       title: "Custom Desktop Navbar",
