@@ -69,6 +69,11 @@ export const workData: { title: string; href: string; description: string }[] =
 export const creative: { title: string; href: string; description: string }[] =
   [
     {
+      title: "Custom Cubes Animation",
+      href: "/creative/custom_expand_cubes",
+      description: "Cube grid with content animation",
+    },
+    {
       title: "Custom Animated Counter",
       href: "/creative/custom_animated_counter",
       description: "Incrementing number ticker",
