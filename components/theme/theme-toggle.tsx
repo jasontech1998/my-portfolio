@@ -15,30 +15,26 @@ export default function ThemeToggle() {
     setMounted(true)
   }, [])
 
-  const SWITCH = () => {
-    switch (theme) {
-      case "light":
-        setTheme("dark")
-        break
-      case "dark":
-        setTheme("light")
-        break
-      default:
-        break
+  const switchTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light")
+  }
+
+  const toggleTheme = () => {
+    // Check if View Transitions API is available
+    if (typeof document !== 'undefined' && 'startViewTransition' in document) {
+      // Cast document to any to avoid TypeScript errors
+      const doc = document as any
+      doc.startViewTransition(() => switchTheme())
+    } else {
+      // Fallback for browsers without View Transitions API support
+      switchTheme()
     }
   }
 
-  const TOGGLE_THEME = () => {
-    //@ts-ignore
-    if (!document.startViewTransition) SWITCH()
-
-    //@ts-ignore
-    document.startViewTransition(SWITCH)
-  }
-
+  // For SSR, return a placeholder until client-side code can run
   if (!mounted) {
     return (
-      <Button variant="ghost" size="icon" onClick={TOGGLE_THEME} className="relative rounded-full w-10 h-10">
+      <Button variant="ghost" size="icon" className="relative rounded-full w-10 h-10">
         <span className="sr-only">Toggle theme</span>
       </Button>
     )
@@ -49,9 +45,12 @@ export default function ThemeToggle() {
       variant="ghost"
       size="icon"
       className="relative rounded-full w-10 h-10"
-      onClick={TOGGLE_THEME}
+      onClick={toggleTheme}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      // Add touch events for mobile support
+      onTouchStart={() => setIsHovered(true)}
+      onTouchEnd={() => setIsHovered(false)}
     >
       <AnimatePresence mode="wait">
         <motion.div
@@ -89,4 +88,3 @@ export default function ThemeToggle() {
     </Button>
   )
 }
-
