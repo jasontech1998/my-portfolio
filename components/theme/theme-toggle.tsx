@@ -20,18 +20,14 @@ export default function ThemeToggle() {
   }
 
   const toggleTheme = () => {
-    // Check if View Transitions API is available
     if (typeof document !== 'undefined' && 'startViewTransition' in document) {
-      // Cast document to any to avoid TypeScript errors
       const doc = document as any
       doc.startViewTransition(() => switchTheme())
     } else {
-      // Fallback for browsers without View Transitions API support
       switchTheme()
     }
   }
 
-  // For SSR, return a placeholder until client-side code can run
   if (!mounted) {
     return (
       <Button variant="ghost" size="icon" className="relative rounded-full w-10 h-10">
@@ -48,7 +44,6 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      // Add touch events for mobile support
       onTouchStart={() => setIsHovered(true)}
       onTouchEnd={() => setIsHovered(false)}
     >
