@@ -1,17 +1,16 @@
 import { TypingButton } from "@/components/TypingButton";
 import { StackBadge } from "@/components/StackBadge";
+import { BackButton } from "@/components/BackButton";
 
 export default function Page() {
   const repoHref = "https://github.com/jasontech1998/react-trivia-game";
-  const techStack = [
-    "React",
-    "Typescript",
-    "WebSocket API",
-    "Tailwind",
-  ];
+  const techStack = ["React", "Typescript", "WebSocket API", "Tailwind"];
 
   return (
     <section>
+      <div className="flex items-center gap-2 mb-4">
+        <BackButton href="/projects" />
+      </div>
       <div className="flex flex-wrap justify-between mb-8">
         <h1 className="text-2xl self-end font-semibold tracking-tighter">
           Real Time Trivia Game
@@ -20,7 +19,11 @@ export default function Page() {
       </div>
       <div className="flex mb-8">
         <p className="text-sm self-end leading-snug text-muted-foreground">
-          A fast-paced, real-time trivia game where two players go head-to-head, racing to answer questions quickly and accurately. Leveraging WebSocket technology, the game ensures instant updates and seamless interaction between players, creating a truly dynamic and competitive experience.
+          A fast-paced, real-time trivia game where two players go head-to-head,
+          racing to answer questions quickly and accurately. Leveraging
+          WebSocket technology, the game ensures instant updates and seamless
+          interaction between players, creating a truly dynamic and competitive
+          experience.
         </p>
       </div>
       <div className="flex flex-wrap pb-6 gap-1">

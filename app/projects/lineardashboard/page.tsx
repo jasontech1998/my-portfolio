@@ -1,5 +1,6 @@
 import { TypingButton } from "@/components/TypingButton";
 import { StackBadge } from "@/components/StackBadge";
+import { BackButton } from "@/components/BackButton";
 
 export default function Page() {
   const repoHref = "https://github.com/jasontech1998/linear-dashboard";
@@ -15,6 +16,9 @@ export default function Page() {
 
   return (
     <section>
+      <div className="flex items-center gap-2 mb-4">
+        <BackButton href="/projects" />
+      </div>
       <div className="flex flex-wrap justify-between mb-8">
         <h1 className="text-2xl self-end font-semibold tracking-tighter">
           Linear Dashboard
@@ -24,7 +28,8 @@ export default function Page() {
 
       <div className="flex mb-8">
         <p className="text-sm self-end leading-snug text-muted-foreground">
-          A Next.js project featuring a Linear-inspired dashboard with advanced due date indicators for efficient task management.
+          A Next.js project featuring a Linear-inspired dashboard with advanced
+          due date indicators for efficient task management.
         </p>
       </div>
 

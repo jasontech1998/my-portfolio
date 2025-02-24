@@ -1,5 +1,6 @@
 import { TypingButton } from "@/components/TypingButton";
 import { StackBadge } from "@/components/StackBadge";
+import { BackButton } from "@/components/BackButton";
 
 export default function Page() {
   const repoHref = "https://github.com/jasontech1998/spotify-comment-app";
@@ -14,6 +15,9 @@ export default function Page() {
 
   return (
     <section>
+      <div className="flex items-center gap-2 mb-4">
+        <BackButton href="/projects" />
+      </div>
       <div className="flex flex-wrap justify-between mb-8">
         <h1 className="text-2xl self-end font-semibold tracking-tighter">
           Podspot
@@ -40,10 +44,7 @@ export default function Page() {
         </h2>
         <div className="flex mt-4 p-4 justify-center rounded-md border-accent border-2">
           <video width="650" height="750" controls autoPlay loop muted>
-            <source
-              src="/assets/projects/podspot.mp4"
-              type="video/mp4"
-            />
+            <source src="/assets/projects/podspot.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
