@@ -1,7 +1,6 @@
 import { Connect } from "@/components/Connect";
 import { Intro } from "@/components/Intro";
 import { Bio } from "@/components/Bio";
-import AiChat from "@/components/AiChat";
 
 export default function Home() {
   return (
