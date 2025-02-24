@@ -1,3 +1,4 @@
+import { BackButton } from "@/components/BackButton";
 import { StackBadge } from "@/components/StackBadge";
 
 import Image from "next/image";
@@ -7,6 +8,9 @@ export default function Page() {
 
   return (
     <section>
+      <div className="flex items-center gap-2 mb-4">
+        <BackButton href="/work" />
+      </div>
       <div className="flex flex-wrap justify-between mb-8">
         <h1 className="text-2xl self-end font-semibold tracking-tighter">
           HIL3
@@ -18,12 +22,12 @@ export default function Page() {
 
       <div className="flex mb-8">
         <p className="text-sm self-end leading-snug text-muted-foreground">
-          I helped develop HIL3, an improved version of EAB&apos;s custom JSON parser
-          language. I leveraged my fresh perspective to enhance readability and
-          simplify syntax, reducing code complexity and easing adoption. I
-          contributed to design, implementation, and integration across multiple
-          products, demonstrating my ability to quickly grasp and improve
-          complex systems.
+          I helped develop HIL3, an improved version of EAB&apos;s custom JSON
+          parser language. I leveraged my fresh perspective to enhance
+          readability and simplify syntax, reducing code complexity and easing
+          adoption. I contributed to design, implementation, and integration
+          across multiple products, demonstrating my ability to quickly grasp
+          and improve complex systems.
         </p>
       </div>
 

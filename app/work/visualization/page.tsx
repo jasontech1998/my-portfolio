@@ -1,3 +1,4 @@
+import { BackButton } from "@/components/BackButton";
 import { StackBadge } from "@/components/StackBadge";
 
 import Image from "next/image";
@@ -7,6 +8,9 @@ export default function Page() {
 
   return (
     <section>
+      <div className="flex items-center gap-2 mb-4">
+        <BackButton href="/work" />
+      </div>
       <div className="flex flex-wrap justify-between mb-8">
         <h1 className="text-2xl self-end font-semibold tracking-tighter">
           Visualization
