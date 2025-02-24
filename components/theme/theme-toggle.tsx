@@ -1,51 +1,57 @@
-"use client"
+"use client";
 
-import { MoonIcon, SunIcon } from "lucide-react"
-import { useTheme } from "next-themes"
-import { Button } from "@/components/ui/button"
-import { motion, AnimatePresence } from "framer-motion"
-import { useState, useEffect } from "react"
+import { MoonIcon, SunIcon } from "lucide-react";
+import { useTheme } from "next-themes";
+import { Button } from "@/components/ui/button";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 
 export default function ThemeToggle() {
-  const { theme, setTheme } = useTheme()
-  const [isHovered, setIsHovered] = useState(false)
-  const [mounted, setMounted] = useState(false)
+  const { theme, setTheme } = useTheme();
+  const [isHovered, setIsHovered] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   const SWITCH = () => {
     switch (theme) {
       case "light":
-        setTheme("dark")
-        break
+        setTheme("dark");
+        break;
       case "dark":
-        setTheme("light")
-        break
+        setTheme("light");
+        break;
       default:
-        break
+        break;
     }
-  }
+  };
 
   const TOGGLE_THEME = () => {
-    // Check if the API exists AND if we're not on iOS Safari 
-    // (which has known issues with View Transitions)
-    if (!document.startViewTransition || 
-        /iPhone|iPad|iPod/.test(navigator.userAgent)) {
+    //@ts-ignore
+    if (
+      !document.startViewTransition ||
+      /iPhone|iPad|iPod/.test(navigator.userAgent)
+    ) {
       SWITCH();
-      return;``
+      return;
     }
-  
+
+    //@ts-ignore
     document.startViewTransition(SWITCH);
-  }
+  };
 
   if (!mounted) {
     return (
-      <Button variant="ghost" size="icon" className="relative rounded-full w-10 h-10">
+      <Button
+        variant="ghost"
+        size="icon"
+        className="relative rounded-full w-10 h-10"
+      >
         <span className="sr-only">Toggle theme</span>
       </Button>
-    )
+    );
   }
 
   return (
@@ -91,6 +97,5 @@ export default function ThemeToggle() {
       />
       <span className="sr-only">Toggle theme</span>
     </Button>
-  )
+  );
 }
-
