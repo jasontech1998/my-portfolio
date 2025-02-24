@@ -29,11 +29,15 @@ export default function ThemeToggle() {
   }
 
   const TOGGLE_THEME = () => {
-    //@ts-ignore
-    if (!document.startViewTransition) SWITCH()
-
-    //@ts-ignore
-    document.startViewTransition(SWITCH)
+    // Check if the API exists AND if we're not on iOS Safari 
+    // (which has known issues with View Transitions)
+    if (!document.startViewTransition || 
+        /iPhone|iPad|iPod/.test(navigator.userAgent)) {
+      SWITCH();
+      return;``
+    }
+  
+    document.startViewTransition(SWITCH);
   }
 
   if (!mounted) {
