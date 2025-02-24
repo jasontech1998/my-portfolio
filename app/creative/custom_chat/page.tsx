@@ -1,11 +1,21 @@
 import AiChat from "@/components/AiChat";
+import { BackButton } from "@/components/BackButton";
 import { StackBadge } from "@/components/StackBadge";
 
 export default function Page() {
-  const techStack = ["OpenAI Embeddings",'OpenAI Chat', "Pinecone", "React", "Tailwind"];
+  const techStack = [
+    "OpenAI Embeddings",
+    "OpenAI Chat",
+    "Pinecone",
+    "React",
+    "Tailwind",
+  ];
 
   return (
     <section>
+      <div className="flex items-center gap-2 mb-6">
+        <BackButton href="/creative" />
+      </div>
       <div className="flex flex-wrap justify-between mb-8">
         <h1 className="text-2xl self-end font-semibold tracking-tighter">
           Custom Chat
@@ -22,8 +32,8 @@ export default function Page() {
       </div>
 
       <p className="text-xs text-muted-foreground mb-4 italic">
-          Note: Recently deleted OpenAI API key due to data breach.
-        </p>
+        Note: Recently deleted OpenAI API key due to data breach.
+      </p>
 
       <div className="flex flex-wrap pb-6 gap-1">
         {techStack.map((tech, index) => {

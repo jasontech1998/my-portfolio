@@ -1,11 +1,13 @@
 "use client";
 
 import { StackBadge } from "@/components/StackBadge";
-import AnimatedNumber from "@/components/creative/AnimatedNumber/AnimatedNumber";
 import { useState } from "react";
 
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+
+import AnimatedNumber from "@/components/creative/AnimatedNumber/AnimatedNumber";
+import { BackButton } from "@/components/BackButton";
 
 export default function Page() {
   const techStack = ["React", "Typescript"];
@@ -26,6 +28,9 @@ export default function Page() {
 
   return (
     <section>
+      <div className="flex items-center gap-2 mb-6">
+        <BackButton href="/creative" />
+      </div>
       <div className="flex flex-wrap justify-between mb-8">
         <h1 className="text-2xl self-end font-semibold tracking-tighter">
           Custom Animated Counter

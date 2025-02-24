@@ -77,8 +77,8 @@ export function ListArticleLink() {
             </div>
             <>
               <div className="relative h-px w-full my-4">
-                <div className="absolute inset-0 bg-gray-300" />
-                <div className="absolute inset-0 w-0 bg-[#0e2b2f] transition-all duration-700 ease-in-out group-hover:w-full" />
+                <div className="absolute inset-0 bg-muted" />
+                <div className="absolute inset-0 w-0 bg-primary transition-all duration-700 ease-in-out group-hover:w-full" />
               </div>
               <div className="flex items-center text-sm font-medium text-primary justify-between">
                 <span>Read more</span>

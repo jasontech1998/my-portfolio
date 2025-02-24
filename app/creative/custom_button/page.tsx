@@ -1,3 +1,4 @@
+import { BackButton } from "@/components/BackButton";
 import { StackBadge } from "@/components/StackBadge";
 import AnimatedButton from "@/components/creative/AnimatedButton";
 
@@ -6,6 +7,9 @@ export default function Page() {
 
   return (
     <section>
+      <div className="flex items-center gap-2 mb-6">
+        <BackButton href="/creative" />
+      </div>
       <div className="flex flex-wrap justify-between mb-8">
         <h1 className="text-2xl self-end font-semibold tracking-tighter">
           Custom Animated Button
@@ -17,7 +21,7 @@ export default function Page() {
 
       <div className="flex mb-8">
         <p className="text-sm self-end leading-snug text-muted-foreground">
-        This is a custom button with loading animation.
+          This is a custom button with loading animation.
         </p>
       </div>
 

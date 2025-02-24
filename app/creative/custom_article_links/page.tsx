@@ -1,3 +1,4 @@
+import { BackButton } from "@/components/BackButton";
 import { StackBadge } from "@/components/StackBadge";
 import { ListArticleLink } from "@/components/creative/ListArticleLink/ListArticleLink";
 
@@ -6,6 +7,9 @@ export default function Page() {
 
   return (
     <section>
+      <div className="flex items-center gap-2 mb-6">
+        <BackButton href="/creative" />
+      </div>
       <div className="flex flex-wrap justify-between mb-8">
         <h1 className="text-2xl self-end font-semibold tracking-tighter">
           Custom Article Links
