@@ -3,10 +3,10 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-type Interest = "technology" | "art" | "fashion" | "music" | "movies";
+type Interest = "tech" | "art" | "fashion" | "music" | "movies";
 
 const interests: Interest[] = [
-  "technology",
+  "tech",
   "art",
   "fashion",
   "music",
@@ -14,7 +14,7 @@ const interests: Interest[] = [
 ];
 
 const gradients: Record<Interest, string> = {
-  technology: "bg-gradient-to-r from-slate-400 via-slate-500 to-slate-600",
+  tech: "bg-gradient-to-r from-slate-400 via-slate-500 to-slate-600",
   art: "bg-gradient-to-r from-blue-500 via-teal-400 to-green-400",
   fashion: "bg-gradient-to-r from-rose-500 via-purple-500 to-violet-500",
   music: "bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-500",
