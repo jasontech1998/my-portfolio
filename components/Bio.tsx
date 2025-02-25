@@ -59,7 +59,7 @@ export function Bio() {
         functionality. My passion lies in creating visually captivating and
         intuitive digital experiences that resonate with people.
       </p>
-      <p className="text-foreground whitespace-nowrap">
+      <p className="text-foreground">
         Beyond my professional pursuits, I enjoy{" "}
         <span className="relative inline-block">
           <AnimatePresence mode="wait">

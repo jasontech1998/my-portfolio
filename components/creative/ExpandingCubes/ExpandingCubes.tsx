@@ -1,51 +1,112 @@
 "use client";
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 interface Position {
   x: number;
   y: number;
 }
 
-const ExpandingCubes = () => {
+interface ContentSize {
+  width: number;
+  height: number;
+}
+
+const ExpandingCubes = ({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) => {
   const [positions, setPositions] = useState<Position[]>([]);
+  const [contentSize, setContentSize] = useState<ContentSize>({
+    width: 0,
+    height: 0,
+  });
+  const [hoveredCube, setHoveredCube] = useState<number | null>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (contentRef.current) {
+      setContentSize({
+        width: contentRef.current.offsetWidth,
+        height: contentRef.current.offsetHeight,
+      });
+    }
+
+    const resizeObserver = new ResizeObserver((entries) => {
+      for (let entry of entries) {
+        setContentSize({
+          width: entry.contentRect.width,
+          height: entry.contentRect.height,
+        });
+      }
+    });
+
+    if (contentRef.current) {
+      resizeObserver.observe(contentRef.current);
+    }
+
+    return () => {
+      if (contentRef.current) {
+        resizeObserver.unobserve(contentRef.current);
+      }
+    };
+  }, [children]);
 
   useEffect(() => {
     const updatePositions = () => {
-      const width = window.innerWidth;
-      if (width < 768) {
+      const viewportWidth = window.innerWidth;
+
+      const verticalPadding = 80;
+      const totalHeight = contentSize.height + verticalPadding * 2;
+
+      const baseHorizontalSpacing = Math.min(
+        Math.max(contentSize.width * 0.5, 180),
+        viewportWidth < 768 ? 180 : 320
+      );
+
+      const horizontalSpacing =
+        viewportWidth < 768
+          ? Math.min(baseHorizontalSpacing, viewportWidth * 0.4)
+          : baseHorizontalSpacing;
+
+      if (viewportWidth < 768) {
         return [
-          { x: -180, y: -100 },
-          { x: 0, y: -100 },
-          { x: 180, y: -100 },
-          { x: -180, y: 100 },
-          { x: 0, y: 100 },
-          { x: 180, y: 100 },
+          { x: -horizontalSpacing, y: -totalHeight / 2 + 50 },
+          { x: 0, y: -totalHeight / 2 + 50 },
+          { x: horizontalSpacing, y: -totalHeight / 2 + 50 },
+          { x: -horizontalSpacing, y: totalHeight / 2 - 50 },
+          { x: 0, y: totalHeight / 2 - 50 },
+          { x: horizontalSpacing, y: totalHeight / 2 - 50 },
         ];
       }
 
       return [
-        { x: -300, y: -100 },
-        { x: 0, y: -100 },
-        { x: 300, y: -100 },
-        { x: -300, y: 100 },
-        { x: 0, y: 100 },
-        { x: 300, y: 100 },
+        { x: -horizontalSpacing, y: -totalHeight / 2 + 50 },
+        { x: 0, y: -totalHeight / 2 + 50 },
+        { x: horizontalSpacing, y: -totalHeight / 2 + 50 },
+        { x: -horizontalSpacing, y: totalHeight / 2 - 50 },
+        { x: 0, y: totalHeight / 2 - 50 },
+        { x: horizontalSpacing, y: totalHeight / 2 - 50 },
       ];
     };
 
-    setPositions(updatePositions());
+    if (contentSize.width > 0 && contentSize.height > 0) {
+      setPositions(updatePositions());
+    }
 
     const handleResize = () => {
-      setPositions(updatePositions());
+      if (contentSize.width > 0 && contentSize.height > 0) {
+        setPositions(updatePositions());
+      }
     };
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  }, [contentSize]);
 
   const cubeVariants = {
-    initial: { x: 0, y: 0, opacity: 1, scale: 2 },
+    initial: { x: 0, y: 0, opacity: 1, scale: 3 },
     animate: (custom: { x: number; y: number }) => ({
       x: custom.x,
       y: custom.y,
@@ -58,6 +119,17 @@ const ExpandingCubes = () => {
         delay: 0.5,
       },
     }),
+    hover: {
+      scale: 1.3,
+      rotate: 45,
+      boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.2)",
+      borderRadius: "4px",
+      transition: {
+        duration: 0.2, // Faster duration for more immediate feedback
+        type: "tween", // Use tween for smoother quick interactions
+        ease: "easeOut", // Smooth easing function
+      },
+    },
   };
 
   const contentVariants = {
@@ -71,17 +143,28 @@ const ExpandingCubes = () => {
     },
   };
 
+  const containerHeight = Math.max(200, contentSize.height + 100);
+
   return (
     <div className="relative w-full">
-      <div className="relative h-64 w-full flex items-center justify-center mb-8">
+      <div
+        className="relative w-full flex items-center justify-center mb-8"
+        style={{ minHeight: `${containerHeight}px` }}
+      >
         {positions.map((position, index) => (
           <motion.div
             key={index}
-            className="absolute w-8 h-8 bg-gray-300 rounded-lg"
+            className="absolute w-6 h-6 bg-white dark:bg-black border-2 border-black dark:border-white rounded-md shadow-sm backdrop-blur-[1px]"
             variants={cubeVariants}
             initial="initial"
             animate="animate"
+            whileHover="hover"
             custom={position}
+            onMouseEnter={() => setHoveredCube(index)}
+            onMouseLeave={() => setHoveredCube(null)}
+            style={{
+              zIndex: hoveredCube === index ? 20 : 1,
+            }}
           />
         ))}
 
@@ -89,12 +172,10 @@ const ExpandingCubes = () => {
           variants={contentVariants}
           initial="initial"
           animate="animate"
+          className="z-10 w-full max-w-full overflow-visible"
+          ref={contentRef}
         >
-          <div className="flex flex-wrap justify-between">
-            <h1 className="text-2xl self-end font-semibold tracking-tighter">
-              Welcome
-            </h1>
-          </div>
+          <div className="w-full px-2 md:px-4">{children}</div>
         </motion.div>
       </div>
     </div>

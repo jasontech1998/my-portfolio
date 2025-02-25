@@ -32,7 +32,11 @@ export default function Page() {
         })}
       </div>
 
-      <ExpandingCubes />
+      <ExpandingCubes>
+        <div className="h-52 flex justify-center items-center">
+          <h1 className="text-center font-semibold">Welcome</h1>
+        </div>
+      </ExpandingCubes>
     </section>
   );
 }

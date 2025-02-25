@@ -55,7 +55,7 @@ const CalendlyLink: React.FC = () => {
             <motion.div
               initial={{ rotate: 0 }}
               animate={{ rotate: [90, 0] }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 0.5, delay: 1 }}
               className="flex align-center"
             >
               <Calendar />
