@@ -1,16 +1,22 @@
 export const projects: { title: string; href: string; description: string }[] =
   [
     {
+      title: "Silhouette",
+      href: "/projects/silhouette",
+      description:
+        "Ambient computing technology that enhances spaces while vanishing into the background.",
+    },
+    {
       title: "Linear Dashboard",
       href: "/projects/lineardashboard",
       description:
-        "A Next.js project featuring a Linear-inspired dashboard with advanced due date indicators for efficient task management.",
+        "Linear-inspired dashboard with advanced due date indicators for efficient task management.",
     },
     {
       title: "FestiFaves",
       href: "/projects/festifaves",
       description:
-        "FestiFaves leverages AI to curate personalized Spotify playlists based on festival lineups, enhancing your music discovery experience",
+        "Leverages AI to curate personalized Spotify playlists based on festival lineups, enhancing your music discovery experience",
     },
     {
       title: "Real Time Trivia Game",
@@ -22,7 +28,7 @@ export const projects: { title: string; href: string; description: string }[] =
       title: "LikeMix",
       href: "/projects/likemix",
       description:
-        "LikeMix is an app designed to automate the sharing of your liked songs from any album",
+        "Automate the sharing of your liked songs from any album",
     },
     {
       title: "Podspot",
@@ -33,7 +39,7 @@ export const projects: { title: string; href: string; description: string }[] =
       title: "Pumpr",
       href: "/projects/pumpr",
       description:
-        "Pumpr is a Fitness Social Media Platform for users to meet workout partners with similar strength, goals and schedules",
+        "Fitness Social Media Platform for users to meet workout partners with similar strength, goals and schedules",
     },
   ];
 
