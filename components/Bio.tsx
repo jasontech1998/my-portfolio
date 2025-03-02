@@ -21,18 +21,10 @@ const highlightedTerms = [
     text: "four years of expertise",
     gradient: "bg-gradient-to-r from-amber-400 to-orange-500",
   },
-  // {
-  //   text: "user-friendly interfaces",
-  //   gradient: "bg-gradient-to-r from-cyan-400 to-blue-500",
-  // },
   {
     text: "visually captivating",
     gradient: "bg-gradient-to-r from-violet-400 to-purple-600",
   },
-  // {
-  //   text: "intuitive digital experiences",
-  //   gradient: "bg-gradient-to-r from-emerald-400 to-teal-600",
-  // },
   {
     text: "technical expertise",
     gradient: "bg-gradient-to-r from-blue-400 to-indigo-600",
