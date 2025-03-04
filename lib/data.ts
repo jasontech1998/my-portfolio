@@ -19,16 +19,16 @@ export const projects: { title: string; href: string; description: string }[] =
         "Leverages AI to curate personalized Spotify playlists based on festival lineups, enhancing your music discovery experience",
     },
     {
-      title: "Real Time Trivia Game",
-      href: "/projects/triviagame",
-      description:
-        "A fast-paced, real-time game challenging players to test their knowledge across diverse topics",
-    },
-    {
       title: "LikeMix",
       href: "/projects/likemix",
       description:
         "Automate the sharing of your liked songs from any album",
+    },
+    {
+      title: "Real Time Trivia Game",
+      href: "/projects/triviagame",
+      description:
+        "A fast-paced, real-time game challenging players to test their knowledge across diverse topics",
     },
     {
       title: "Podspot",
