@@ -42,8 +42,8 @@ export default function Page() {
         <h2 className="mt-10 scroll-m-20 pb-2 text-2xl font-semibold tracking-tight transition-colors first:mt-0">
           Virtual Showcase
         </h2>
-        <div className="flex mt-4 p-4 justify-center rounded-md border-accent border-2">
-          <video width="650" height="750" controls autoPlay loop muted>
+        <div className="flex mt-4 p-2 sm:p-4 justify-center rounded-md border-accent border-2">
+          <video className="w-full" controls autoPlay loop muted playsInline>
             <source src="/assets/projects/podspot.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>

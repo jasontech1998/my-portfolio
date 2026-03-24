@@ -11,7 +11,7 @@ import CalendlyLink from "./CalendlyLink";
 
 export const Connect = () => {
   return (
-    <div className="flex gap-3 -mx-3 mt-12">
+    <div className="flex flex-wrap gap-2 sm:gap-3 -mx-3 mt-8 sm:mt-12">
       <TooltipProvider delayDuration={100}>
         <Tooltip>
           <TooltipTrigger>

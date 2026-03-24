@@ -46,8 +46,8 @@ export default function Page() {
           </h2>
           <TypingButton href={demoHref} text="Demo" />
         </div>
-        <div className="flex mt-4 p-4 justify-center rounded-md border-accent border-2">
-          <video width="650" height="750" controls autoPlay loop muted>
+        <div className="flex mt-4 p-2 sm:p-4 justify-center rounded-md border-accent border-2">
+          <video className="w-full" controls autoPlay loop muted playsInline>
             <source
               src="/assets/projects/lineardashboard_demo.mp4"
               type="video/mp4"

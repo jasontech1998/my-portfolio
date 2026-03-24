@@ -29,7 +29,7 @@ export const AnimatedItems = ({ items }: { items: TItems[] }) => {
             href={item.href}
           >
             <div className="flex items-center justify-between">
-              <div className="text-sm font-medium leading-none max-w-60 sm:max-w-md">
+              <div className="text-sm font-medium leading-none max-w-[75vw] sm:max-w-md">
                 <p className="line-clamp-2 text-sm leading-snug">
                   {item.title}
                 </p>

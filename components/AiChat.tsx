@@ -58,8 +58,8 @@ const AiChat = () => {
 
   return (
     <Card className="w-full max-w-2xl mx-auto">
-      <CardContent className="p-6">
-        <div className="h-[400px] overflow-y-auto mb-4 space-y-4">
+      <CardContent className="p-3 sm:p-6">
+        <div className="h-[280px] sm:h-[400px] overflow-y-auto mb-4 space-y-4">
           <AnimatePresence>
             {messages.map((message) => (
               <motion.div
@@ -70,7 +70,7 @@ const AiChat = () => {
                 transition={{ duration: 0.3 }}
                 className={`flex ${message.isUser ? 'justify-end' : 'justify-start'}`}
               >
-                <div className={`max-w-[70%] p-3 rounded-lg ${message.isUser ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-800'}`}>
+                <div className={`max-w-[85%] sm:max-w-[70%] p-3 rounded-lg ${message.isUser ? 'bg-blue-500 text-white' : 'bg-gray-200 text-gray-800'}`}>
                   {message.text}
                 </div>
               </motion.div>
@@ -83,7 +83,7 @@ const AiChat = () => {
               exit={{ opacity: 0 }}
               className="flex justify-start"
             >
-              <div className="max-w-[70%] p-3 rounded-lg bg-gray-200 text-gray-800">
+              <div className="max-w-[85%] sm:max-w-[70%] p-3 rounded-lg bg-gray-200 text-gray-800">
                 <TypingIndicator />
               </div>
             </motion.div>
