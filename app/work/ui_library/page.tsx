@@ -1,7 +1,6 @@
 import { BackButton } from "@/components/BackButton";
 import { StackBadge } from "@/components/StackBadge";
-
-import Image from "next/image";
+import { ShowcaseImage } from "@/components/ShowcaseImage";
 
 export default function Page() {
   const techStack = ["LitElement", "Polymer", "Typescript"];
@@ -39,35 +38,9 @@ export default function Page() {
         <h2 className="mt-10 scroll-m-20 pb-2 text-2xl font-semibold tracking-tight transition-colors first:mt-0">
           Virtual Showcase
         </h2>
-        <div className="flex flex-col justify-center items-center">
-          <div className="flex mt-4 p-4 justify-center rounded-md border-accent border-2">
-            <Image
-              src="/assets/work/ui_one.png"
-              width={750}
-              height={750}
-              alt="Picture of UI Library one"
-              priority
-            />
-          </div>
-          <div className="flex mt-4 p-4 justify-center rounded-md border-accent border-2">
-            <Image
-              src="/assets/work/ui_two.png"
-              width={750}
-              height={750}
-              alt="Picture of UI Library two"
-              priority
-            />
-          </div>
-          <div className="flex mt-4 p-4 justify-center rounded-md border-accent border-2">
-            <Image
-              src="/assets/work/ui_three.png"
-              width={750}
-              height={750}
-              alt="Picture of UI Library three"
-              priority
-            />
-          </div>
-        </div>
+        <ShowcaseImage src="/assets/work/ui_one.png" alt="Picture of UI Library one" />
+        <ShowcaseImage src="/assets/work/ui_two.png" alt="Picture of UI Library two" />
+        <ShowcaseImage src="/assets/work/ui_three.png" alt="Picture of UI Library three" />
       </div>
     </section>
   );

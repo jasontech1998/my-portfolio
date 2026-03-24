@@ -37,7 +37,7 @@ export default function CustomStackItems() {
             key={item.title}
             whileHover={{
               x: 10,
-              transition: { type: "string", duration: 0.2, delay: 0.1 },
+              transition: { type: "spring", duration: 0.2, delay: 0.1 },
             }}
           >
             <a
@@ -62,7 +62,7 @@ export default function CustomStackItems() {
               <motion.div
                 transition={{
                   duration: 0.3,
-                  type: "easeIn",
+                  ease: "easeIn",
                 }}
                 className="absolute inset-0 -z-10 -mx-3 p-3 w-full rounded-md from-muted/50 to-muted bg-gradient-to-b"
                 layoutId="highlight"

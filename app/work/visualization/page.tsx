@@ -1,7 +1,6 @@
 import { BackButton } from "@/components/BackButton";
 import { StackBadge } from "@/components/StackBadge";
-
-import Image from "next/image";
+import { ShowcaseImage } from "@/components/ShowcaseImage";
 
 export default function Page() {
   const techStack = ["LitElement", "Chartjs", "Typescript", "HIL3"];
@@ -41,35 +40,9 @@ export default function Page() {
         <h2 className="mt-10 scroll-m-20 pb-2 text-2xl font-semibold tracking-tight transition-colors first:mt-0">
           Virtual Showcase
         </h2>
-        <div className="flex flex-col justify-center items-center">
-          <div className="flex mt-4 p-4 justify-center rounded-md border-accent border-2">
-            <Image
-              src="/assets/work/barchart.png"
-              width={750}
-              height={750}
-              alt="Picture of Bar Chart"
-              priority
-            />
-          </div>
-          <div className="flex mt-4 p-4 justify-center rounded-md border-accent border-2">
-            <Image
-              src="/assets/work/barchart_detailed.png"
-              width={750}
-              height={750}
-              alt="Picture of detailed Bar Chart"
-              priority
-            />
-          </div>
-          <div className="flex mt-4 p-4 justify-center rounded-md border-accent border-2">
-            <Image
-              src="/assets/work/linechart.png"
-              width={750}
-              height={750}
-              alt="Picture of Line Chart"
-              priority
-            />
-          </div>
-        </div>
+        <ShowcaseImage src="/assets/work/barchart.png" alt="Picture of Bar Chart" />
+        <ShowcaseImage src="/assets/work/barchart_detailed.png" alt="Picture of detailed Bar Chart" />
+        <ShowcaseImage src="/assets/work/linechart.png" alt="Picture of Line Chart" />
       </div>
     </section>
   );

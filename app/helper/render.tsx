@@ -11,7 +11,7 @@ export const renderWithHighlights = (
   text: string,
   highlightedTerms: HighlightedTerm[]
 ) => {
-  let result: (string | JSX.Element)[] = [text];
+  let result: (string | React.ReactElement)[] = [text];
 
   // Sort highlighted terms by length (descending) to avoid partial replacements
   const sortedTerms = [...highlightedTerms].sort(

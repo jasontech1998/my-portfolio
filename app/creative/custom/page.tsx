@@ -1,6 +1,7 @@
 import { BackButton } from "@/components/BackButton";
 import { StackBadge } from "@/components/StackBadge";
 import Example from "@/components/playground/example";
+import Voice from "@/components/Voice";
 
 export default function Page() {
   const techStack = ["React", "Typescript", "Framer Motion", "Tailwind"];
@@ -32,14 +33,7 @@ export default function Page() {
       </div>
 
       <div className="flex mt-4 p-4 justify-center items-center rounded-md border-accent border-2">
-        <Example
-          image_path="/assets/stripe_logo.svg"
-          subtitle="Architecting a live look at reliability: Stripe's viral Black Friday site"
-          stats={[
-            { label: "Uptime", value: "100%" },
-            { label: "Edge requests", value: "17m+" },
-          ]}
-        />
+        <Voice />
       </div>
     </section>
   );

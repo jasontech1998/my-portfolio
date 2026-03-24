@@ -1,7 +1,6 @@
 import { BackButton } from "@/components/BackButton";
 import { StackBadge } from "@/components/StackBadge";
-
-import Image from "next/image";
+import { ShowcaseImage } from "@/components/ShowcaseImage";
 
 export default function Page() {
   const techStack = ["LitElement", "Ionic", "Angular", "Typescript"];
@@ -38,33 +37,24 @@ export default function Page() {
         <h2 className="mt-10 scroll-m-20 pb-2 text-2xl font-semibold tracking-tight transition-colors first:mt-0">
           Virtual Showcase
         </h2>
-        <div className="flex mt-4 p-4 justify-center rounded-md border-accent border-2">
-          <Image
-            src="/assets/work/native_one.png"
-            width={500}
-            height={500}
-            alt="Picture of Journeys feature in Native one"
-            priority
-          />
-        </div>
-        <div className="flex mt-4 p-4 justify-center rounded-md border-accent border-2">
-          <Image
-            src="/assets/work/native_two.png"
-            width={500}
-            height={500}
-            alt="Picture of Journeys feature in Native two"
-            priority
-          />
-        </div>
-        <div className="flex mt-4 p-4 justify-center rounded-md border-accent border-2">
-          <Image
-            src="/assets/work/native_three.png"
-            width={500}
-            height={500}
-            alt="Picture of Journeys feature in Native three"
-            priority
-          />
-        </div>
+        <ShowcaseImage
+          src="/assets/work/native_one.png"
+          alt="Picture of Journeys feature in Native one"
+          width={500}
+          height={500}
+        />
+        <ShowcaseImage
+          src="/assets/work/native_two.png"
+          alt="Picture of Journeys feature in Native two"
+          width={500}
+          height={500}
+        />
+        <ShowcaseImage
+          src="/assets/work/native_three.png"
+          alt="Picture of Journeys feature in Native three"
+          width={500}
+          height={500}
+        />
       </div>
     </section>
   );

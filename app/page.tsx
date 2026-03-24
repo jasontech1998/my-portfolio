@@ -5,10 +5,10 @@ import ExpandingCubes from "@/components/creative/ExpandingCubes/ExpandingCubes"
 
 export default function Home() {
   return (
-    <main className="container mx-auto px-4 py-24">
+    <main className="container mx-auto flex flex-col justify-center h-[calc(100vh-120px)]">
       <ExpandingCubes>
-        <h1 className="text-3xl font-semibold tracking-tight mb-8">jason yu</h1>
-        <div className="space-y-6">
+        <h1 className="text-3xl font-semibold tracking-tight mb-3">jason yu</h1>
+        <div className="space-y-4">
           <Intro />
           <Bio />
           <Connect />

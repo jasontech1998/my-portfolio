@@ -1,7 +1,6 @@
 import { BackButton } from "@/components/BackButton";
 import { StackBadge } from "@/components/StackBadge";
-
-import Image from "next/image";
+import { ShowcaseImage } from "@/components/ShowcaseImage";
 
 export default function Page() {
   const techStack = ["LitElement", "Typescript"];
@@ -41,44 +40,10 @@ export default function Page() {
         <h2 className="mt-10 scroll-m-20 pb-2 text-2xl font-semibold tracking-tight transition-colors first:mt-0">
           Virtual Showcase
         </h2>
-        <div className="flex flex-col justify-center items-center">
-          <div className="flex mt-4 p-4 justify-center rounded-md border-accent border-2">
-            <Image
-              src="/assets/work/hil_login.png"
-              width={750}
-              height={750}
-              alt="Picture of HIL 3 template login view"
-              priority
-            />
-          </div>
-          <div className="flex mt-4 p-4 justify-center rounded-md border-accent border-2">
-            <Image
-              src="/assets/work/hil_chart.png"
-              width={750}
-              height={750}
-              alt="Picture of HIL 3 template chart view"
-              priority
-            />
-          </div>
-          <div className="flex mt-4 p-4 justify-center rounded-md border-accent border-2">
-            <Image
-              src="/assets/work/hil_entity.png"
-              width={750}
-              height={750}
-              alt="Picture of HIL 3 template entity view"
-              priority
-            />
-          </div>
-          <div className="flex mt-4 p-4 justify-center rounded-md border-accent border-2">
-            <Image
-              src="/assets/work/hil_render.png"
-              width={750}
-              height={750}
-              alt="Picture of HIL 3 template render types view"
-              priority
-            />
-          </div>
-        </div>
+        <ShowcaseImage src="/assets/work/hil_login.png" alt="Picture of HIL 3 template login view" />
+        <ShowcaseImage src="/assets/work/hil_chart.png" alt="Picture of HIL 3 template chart view" />
+        <ShowcaseImage src="/assets/work/hil_entity.png" alt="Picture of HIL 3 template entity view" />
+        <ShowcaseImage src="/assets/work/hil_render.png" alt="Picture of HIL 3 template render types view" />
       </div>
     </section>
   );

@@ -109,26 +109,3 @@
   }
 }
 
-/* view transition api */
-::view-transition-group(root) {
-  animation-timing-function: var(--expo-out);
-}
-
-::view-transition-new(root) {
-  mask: url("../public/assets/custom-svg.svg") top left / 0 no-repeat;
-  mask-origin: top left;
-  animation: scale 1.5s;
-}
-
-::view-transition-old(root),
-.dark::view-transition-old(root) {
-  animation: scale 1.5s;
-  z-index: -1;
-  transform-origin: bottom right;
-}
-
-@keyframes scale {
-  to {
-    mask-size: 200vmax;
-  }
-}

@@ -1,82 +1,44 @@
 "use client";
 
-import * as React from "react";
-
-import { cn } from "@/lib/utils";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
-
-import { Briefcase, Code, Palette } from "lucide-react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
-import { projects, workData, creative } from "@/lib/data";
+const navItems = [
+  { href: "/", label: "Home", exact: true },
+  { href: "/work", label: "Work" },
+  { href: "/projects", label: "Projects" },
+  { href: "/creative", label: "Creative" },
+];
 
 export function Navbar() {
+  const pathname = usePathname();
+
   return (
-    <NavigationMenu className="pt-2">
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Home
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/work" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Work
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/projects" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Projects
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href="/creative" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Creative
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
+    <div className="fixed top-3 left-4 z-50">
+      <nav className="backdrop-blur-xl bg-white dark:bg-black rounded-md px-2 py-1 shadow-sm border-2 border-black dark:border-white">
+        <ul className="flex items-center space-x-1">
+          {navItems.map(({ href, label, exact }) => {
+            const isActive = exact
+              ? pathname === href
+              : pathname.startsWith(href);
+
+            return (
+              <li key={href}>
+                <Link
+                  href={href}
+                  className={cn(
+                    "inline-flex h-10 items-center justify-center px-4 py-2 text-sm font-medium transition-colors text-muted-foreground hover:text-foreground",
+                    isActive && "text-foreground"
+                  )}
+                >
+                  {label}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+    </div>
   );
 }
-
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className={cn(
-            "block select-none h-full space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
-          )}
-          {...props}
-        >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  );
-});
-ListItem.displayName = "ListItem";

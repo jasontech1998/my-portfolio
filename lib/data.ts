@@ -43,34 +43,78 @@ export const projects: { title: string; href: string; description: string }[] =
     },
   ];
 
-export const workData: { title: string; href: string; description: string }[] =
-  [
-    {
-      title: "Native App",
-      href: "/work/native_app",
-      description: "Building a new native experience for Navigate",
-    },
-    {
-      title: "CareerAscent",
-      href: "/work/careerascent",
-      description: "Building our new product from 0 -> 1",
-    },
-    {
-      title: "Visualization",
-      href: "/work/visualization",
-      description: "Upgrading our visualization library",
-    },
-    {
-      title: "HIL3",
-      href: "/work/hil3",
-      description: "Creating and enhancing our custom JSON parser language",
-    },
-    {
-      title: "UI Library",
-      href: "/work/ui_library",
-      description: "Comprehensive internal UI components library",
-    },
-  ];
+export const roeblingData: {
+  title: string;
+  href: string;
+  description: string;
+}[] = [
+  {
+    title: "Showcase",
+    href: "/work/showcase",
+    description:
+      "Visual demos of key product experiences I designed and built",
+  },
+  {
+    title: "AI Chat Experience",
+    href: "/work/ai_chat",
+    description:
+      "Integrated AI chat for engineering editors with streaming responses and persistent state",
+  },
+  {
+    title: "Visual Graph Editors",
+    href: "/work/graph_editors",
+    description:
+      "Interactive React Flow editors with typed connections, auto-layout, and undo/redo",
+  },
+  {
+    title: "Real-time Collaboration",
+    href: "/work/realtime_collab",
+    description:
+      "Live multi-user editing with Supabase Realtime and custom subscription hooks",
+  },
+  {
+    title: "AI Analysis Dashboards",
+    href: "/work/ai_dashboards",
+    description:
+      "Schema-driven rendering system for AI-generated charts, tables, and cost breakdowns",
+  },
+  {
+    title: "Design System",
+    href: "/work/design_system",
+    description:
+      "55+ component library with light/dark theming and domain-specific UI patterns",
+  },
+];
+
+export const eabData: { title: string; href: string; description: string }[] = [
+  {
+    title: "Native App",
+    href: "/work/native_app",
+    description: "Building a new native experience for Navigate",
+  },
+  {
+    title: "CareerAscent",
+    href: "/work/careerascent",
+    description: "Building our new product from 0 -> 1",
+  },
+  {
+    title: "Visualization",
+    href: "/work/visualization",
+    description: "Upgrading our visualization library",
+  },
+  {
+    title: "HIL3",
+    href: "/work/hil3",
+    description: "Creating and enhancing our custom JSON parser language",
+  },
+  {
+    title: "UI Library",
+    href: "/work/ui_library",
+    description: "Comprehensive internal UI components library",
+  },
+];
+
+export const workData = [...roeblingData, ...eabData];
 
 export const creative: { title: string; href: string; description: string }[] =
   [

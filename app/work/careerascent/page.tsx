@@ -1,7 +1,6 @@
 import { BackButton } from "@/components/BackButton";
 import { StackBadge } from "@/components/StackBadge";
-
-import Image from "next/image";
+import { ShowcaseImage } from "@/components/ShowcaseImage";
 
 export default function Page() {
   const techStack = ["React", "Tailwind", "MaterialUI", "Typescript"];
@@ -39,15 +38,10 @@ export default function Page() {
         <h2 className="mt-10 scroll-m-20 pb-2 text-2xl font-semibold tracking-tight transition-colors first:mt-0">
           Virtual Showcase
         </h2>
-        <div className="flex mt-4 p-4 justify-center rounded-md border-accent border-2">
-          <Image
-            src="/assets/work/careerascent.png"
-            width={750}
-            height={650}
-            alt="Picture of CareerAscent home page"
-            priority
-          />
-        </div>
+        <ShowcaseImage
+          src="/assets/work/careerascent.png"
+          alt="Picture of CareerAscent home page"
+        />
       </div>
     </section>
   );

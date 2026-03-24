@@ -113,7 +113,7 @@ const ExpandingCubes = ({
       opacity: 1,
       scale: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
         damping: 15,
         delay: 0.5,
@@ -126,8 +126,8 @@ const ExpandingCubes = ({
       borderRadius: "4px",
       transition: {
         duration: 0.2, // Faster duration for more immediate feedback
-        type: "tween", // Use tween for smoother quick interactions
-        ease: "easeOut", // Smooth easing function
+        type: "tween" as const, // Use tween for smoother quick interactions
+        ease: "easeOut" as const, // Smooth easing function
       },
     },
   };
@@ -146,9 +146,9 @@ const ExpandingCubes = ({
   const containerHeight = Math.max(200, contentSize.height + 100);
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full overflow-visible">
       <div
-        className="relative w-full flex items-center justify-center mb-8"
+        className="relative w-full flex items-center justify-center mb-0 overflow-visible"
         style={{ minHeight: `${containerHeight}px` }}
       >
         {positions.map((position, index) => (

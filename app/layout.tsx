@@ -14,7 +14,7 @@ const inter = Inter({ subsets: ["latin"], display: 'swap' });
 
 export const metadata: Metadata = {
   title: "Jason Yu | Software Engineer",
-  description: "Portfolio of Jason Yu, a software engineer based in Bay Area, CA. Showcasing projects, work experience, and creative designs.",
+  description: "Portfolio of Jason Yu, a software engineer based in New York, NY. Showcasing projects, work experience, and creative designs.",
   keywords: ["Jason Yu", "Software Engineer", "React", "Next.js", "TypeScript", "Portfolio"],
   authors: [{ name: "Jason Yu" }],
   creator: "Jason Yu",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     url: "https://www.jasonyu.app",
     siteName: "Jason Yu Portfolio",
     title: "Jason Yu | Software Engineer",
-    description: "Portfolio of Jason Yu, a software engineer based in Bay Area, CA. Showcasing projects, work experience, and creative designs.",
+    description: "Portfolio of Jason Yu, a software engineer based in New York, NY. Showcasing projects, work experience, and creative designs.",
     images: [
       {
         url: "https://www.jasonyu.app/og-image.jpg",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Jason Yu | Software Engineer",
-    description: "Portfolio of Jason Yu, a software engineer based in Bay Area, CA. Showcasing projects, work experience, and creative designs.",
+    description: "Portfolio of Jason Yu, a software engineer based in New York, NY. Showcasing projects, work experience, and creative designs.",
     creator: "@lockedinagain",
     images: ["https://www.jasonyu.app/twitter-image.jpg"],
   },
@@ -59,10 +59,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${GeistMono.className} antialiased min-h-screen bg-background text-foreground`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="flex flex-col min-h-screen max-w-2xl w-full mx-auto">
+          <div className="relative flex flex-col min-h-screen max-w-2xl w-full mx-auto">
             <div className="px-4 md:px-0 w-full">
               <Navbar />
-              <main className="flex-grow">
+              <main className="flex-grow pt-14">
                 {children}
               </main>
               <Footer />
