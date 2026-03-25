@@ -44,16 +44,24 @@ export function VideoProject({ project }: { project: TWorkProject }) {
         {/* Glow effect */}
         <div className="absolute -inset-1 rounded-2xl bg-foreground/[0.03] dark:bg-foreground/[0.06] opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-700" />
         <div className="absolute -inset-px rounded-xl bg-foreground/[0.04] dark:bg-foreground/[0.08] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        {/* Video */}
+        {/* Media */}
         <div className="relative rounded-xl overflow-hidden border border-border bg-muted/30 shadow-lg shadow-black/5 dark:shadow-black/20">
-          <video
-            ref={videoRef}
-            src={project.media?.[0]?.src}
-            muted
-            loop
-            playsInline
-            className="w-full"
-          />
+          {project.media?.[0]?.type === "image" ? (
+            <img
+              src={project.media[0].src}
+              alt={project.title}
+              className="w-full"
+            />
+          ) : (
+            <video
+              ref={videoRef}
+              src={project.media?.[0]?.src}
+              muted
+              loop
+              playsInline
+              className="w-full"
+            />
+          )}
         </div>
       </div>
     </motion.div>

@@ -61,7 +61,7 @@ export const roeblingWork: TWorkSection = {
         "Designed and built an integrated AI chat experience for engineering editors — a resizable sidebar with canvas viewport auto-panning, streaming responses, animated plan cards, and persistent conversation state across sessions. The chat enables process engineers to interact with AI directly within their workflow without context switching.",
       techStack: ["Next.js", "TypeScript", "React", "Supabase", "Claude API", "Framer Motion"],
       media: [
-        { type: "video", src: "/assets/work/roebling/AIChatFinalDemo.mp4" },
+        { type: "image", src: "/assets/work/roebling/AIMeetingDemo.gif" },
       ],
     },
     {
@@ -71,6 +71,24 @@ export const roeblingWork: TWorkSection = {
       techStack: ["Next.js", "TypeScript", "React", "Framer Motion"],
       media: [
         { type: "video", src: "/assets/work/roebling/LoginFinalDemo.mp4" },
+      ],
+    },
+    {
+      title: "Unit Settings",
+      description:
+        "Built configurable default unit settings for blocks and projects, allowing process engineers to customize measurement units across their simulations.",
+      techStack: ["Next.js", "TypeScript", "React"],
+      media: [
+        { type: "image", src: "/assets/work/roebling/UnitSettingsMeetingDemo.gif" },
+      ],
+    },
+    {
+      title: "Block Diff",
+      description:
+        "Visual interface for the structural diff engine, enabling engineers to compare block-level changes across document versions with clear, actionable diffs.",
+      techStack: ["React", "TypeScript", "Python"],
+      media: [
+        { type: "image", src: "/assets/work/roebling/BlockDiffMeetingDemo.gif" },
       ],
     },
     {

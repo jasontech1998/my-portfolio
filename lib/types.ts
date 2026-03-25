@@ -9,7 +9,7 @@ export interface TWorkProject {
   description: string;
   techStack: string[];
   media?: {
-    type: "video";
+    type: "video" | "image";
     src: string;
   }[];
 }

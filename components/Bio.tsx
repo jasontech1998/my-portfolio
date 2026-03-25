@@ -12,22 +12,7 @@ const highlights = [
 export function Bio() {
   return (
     <section className="max-w-2xl mx-auto">
-      <motion.p
-        className="hidden sm:block text-foreground"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-      >
-        I care deeply about craft — from pixel-level UI polish to scalable
-        frontend architecture. I like building things that feel good to use.
-      </motion.p>
-
-      <motion.div
-        className="hidden sm:block mt-6 space-y-3"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-      >
+      <div className="hidden sm:block mt-6 space-y-3">
         {highlights.map((item, i) => (
           <div key={i} className="flex gap-3 items-start">
             <span className="relative flex mt-1.5 h-1.5 w-1.5 shrink-0">
@@ -37,14 +22,9 @@ export function Bio() {
             <p className="text-sm text-muted-foreground">{item}</p>
           </div>
         ))}
-      </motion.div>
+      </div>
 
-      <motion.p
-        className="mt-4 sm:mt-6 text-foreground"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-      >
+      <p className="mt-4 sm:mt-6 text-foreground">
         I share my thinking and taste on{" "}
         <a
           href="https://x.com/lockedinagain"
@@ -55,7 +35,7 @@ export function Bio() {
           X
         </a>
         {" "}— follow along for thoughts on design, engineering, and building products.
-      </motion.p>
+      </p>
     </section>
   );
 }

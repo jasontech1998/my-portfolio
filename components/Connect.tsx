@@ -109,7 +109,7 @@ export const Connect = () => {
             </a>
           </TooltipTrigger>
           <TooltipContent>
-            <p>Visit Twitter Profile</p>
+            <p>Visit X Profile</p>
           </TooltipContent>
         </Tooltip>
 
