@@ -5,6 +5,7 @@ import { useEffect, useState, useRef } from "react";
 interface Position {
   x: number;
   y: number;
+  floatDelay: number;
 }
 
 interface ContentSize {
@@ -23,6 +24,7 @@ const ExpandingCubes = ({
     height: 0,
   });
   const [hoveredCube, setHoveredCube] = useState<number | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -56,38 +58,38 @@ const ExpandingCubes = ({
   useEffect(() => {
     const updatePositions = () => {
       const viewportWidth = window.innerWidth;
+      const mobile = viewportWidth < 768;
+      setIsMobile(mobile);
 
       const verticalPadding = 80;
       const totalHeight = contentSize.height + verticalPadding * 2;
 
       const baseHorizontalSpacing = Math.min(
         Math.max(contentSize.width * 0.5, 180),
-        viewportWidth < 768 ? 180 : 320
+        mobile ? 180 : 320
       );
 
-      const horizontalSpacing =
-        viewportWidth < 768
-          ? Math.min(baseHorizontalSpacing, viewportWidth * 0.4)
-          : baseHorizontalSpacing;
+      const horizontalSpacing = mobile
+        ? Math.min(baseHorizontalSpacing, viewportWidth * 0.4)
+        : baseHorizontalSpacing;
 
-      if (viewportWidth < 768) {
+      if (mobile) {
+        // 4 cubes on mobile — corners only, more breathing room
         return [
-          { x: -horizontalSpacing, y: -totalHeight / 2 + 50 },
-          { x: 0, y: -totalHeight / 2 + 50 },
-          { x: horizontalSpacing, y: -totalHeight / 2 + 50 },
-          { x: -horizontalSpacing, y: totalHeight / 2 - 50 },
-          { x: 0, y: totalHeight / 2 - 50 },
-          { x: horizontalSpacing, y: totalHeight / 2 - 50 },
+          { x: -horizontalSpacing, y: -totalHeight / 2 + 50, floatDelay: 0 },
+          { x: horizontalSpacing, y: -totalHeight / 2 + 50, floatDelay: 0.5 },
+          { x: -horizontalSpacing, y: totalHeight / 2 - 50, floatDelay: 1.0 },
+          { x: horizontalSpacing, y: totalHeight / 2 - 50, floatDelay: 1.5 },
         ];
       }
 
       return [
-        { x: -horizontalSpacing, y: -totalHeight / 2 + 50 },
-        { x: 0, y: -totalHeight / 2 + 50 },
-        { x: horizontalSpacing, y: -totalHeight / 2 + 50 },
-        { x: -horizontalSpacing, y: totalHeight / 2 - 50 },
-        { x: 0, y: totalHeight / 2 - 50 },
-        { x: horizontalSpacing, y: totalHeight / 2 - 50 },
+        { x: -horizontalSpacing, y: -totalHeight / 2 + 50, floatDelay: 0 },
+        { x: 0, y: -totalHeight / 2 + 50, floatDelay: 0.4 },
+        { x: horizontalSpacing, y: -totalHeight / 2 + 50, floatDelay: 0.8 },
+        { x: -horizontalSpacing, y: totalHeight / 2 - 50, floatDelay: 1.2 },
+        { x: 0, y: totalHeight / 2 - 50, floatDelay: 1.6 },
+        { x: horizontalSpacing, y: totalHeight / 2 - 50, floatDelay: 2.0 },
       ];
     };
 
@@ -104,33 +106,6 @@ const ExpandingCubes = ({
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, [contentSize]);
-
-  const cubeVariants = {
-    initial: { x: 0, y: 0, opacity: 1, scale: 3 },
-    animate: (custom: { x: number; y: number }) => ({
-      x: custom.x,
-      y: custom.y,
-      opacity: 1,
-      scale: 1,
-      transition: {
-        type: "spring" as const,
-        stiffness: 100,
-        damping: 15,
-        delay: 0.5,
-      },
-    }),
-    hover: {
-      scale: 1.3,
-      rotate: 45,
-      boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.2)",
-      borderRadius: "4px",
-      transition: {
-        duration: 0.2, // Faster duration for more immediate feedback
-        type: "tween" as const, // Use tween for smoother quick interactions
-        ease: "easeOut" as const, // Smooth easing function
-      },
-    },
-  };
 
   const contentVariants = {
     initial: { opacity: 0 },
@@ -155,17 +130,61 @@ const ExpandingCubes = ({
           <motion.div
             key={index}
             className="absolute w-6 h-6 bg-white dark:bg-black border-2 border-black dark:border-white rounded-md shadow-sm backdrop-blur-[1px]"
-            variants={cubeVariants}
-            initial="initial"
-            animate="animate"
-            whileHover="hover"
-            custom={position}
+            initial={{ x: 0, y: 0, opacity: 0, scale: 2.5 }}
+            animate={{
+              x: position.x,
+              y: position.y,
+              opacity: 1,
+              scale: 1,
+            }}
+            whileHover={{
+              scale: 1.3,
+              rotate: 45,
+              boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.2)",
+              borderRadius: "4px",
+              transition: {
+                duration: 0.2,
+                type: "tween" as const,
+                ease: "easeOut" as const,
+              },
+            }}
+            whileTap={
+              isMobile
+                ? {
+                    scale: 1.3,
+                    rotate: 45,
+                    boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.2)",
+                    borderRadius: "4px",
+                    transition: { duration: 0.2 },
+                  }
+                : undefined
+            }
+            transition={{
+              type: "spring" as const,
+              stiffness: 80,
+              damping: 22,
+              delay: 0.3 + index * 0.07,
+            }}
             onMouseEnter={() => setHoveredCube(index)}
             onMouseLeave={() => setHoveredCube(null)}
             style={{
               zIndex: hoveredCube === index ? 20 : 1,
             }}
-          />
+          >
+            {/* Subtle floating animation after settling */}
+            <motion.div
+              className="w-full h-full"
+              animate={{
+                y: [0, -4, 0],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1.5 + position.floatDelay,
+              }}
+            />
+          </motion.div>
         ))}
 
         <motion.div

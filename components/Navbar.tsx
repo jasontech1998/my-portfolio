@@ -3,7 +3,6 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-
 const navItems = [
   { href: "/", label: "Home", exact: true },
   { href: "/work", label: "Work" },
