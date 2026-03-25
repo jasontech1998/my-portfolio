@@ -25,21 +25,12 @@ export const metadata: Metadata = {
     siteName: "Jason Yu Portfolio",
     title: "Jason Yu | Software Engineer",
     description: "Portfolio of Jason Yu, a software engineer based in New York, NY. Showcasing projects, work experience, and creative designs.",
-    images: [
-      {
-        url: "https://www.jasonyu.app/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Jason Yu Portfolio",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Jason Yu | Software Engineer",
     description: "Portfolio of Jason Yu, a software engineer based in New York, NY. Showcasing projects, work experience, and creative designs.",
     creator: "@lockedinagain",
-    images: ["https://www.jasonyu.app/twitter-image.jpg"],
   },
   icons: {
     icon: "/favicon.ico",
