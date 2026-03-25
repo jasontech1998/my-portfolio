@@ -3,3 +3,23 @@ export interface TItems {
     href: string;
     description: string;
 }
+
+export interface TWorkProject {
+  title: string;
+  description: string;
+  techStack: string[];
+  media?: {
+    type: "video";
+    src: string;
+  }[];
+}
+
+export interface TWorkSection {
+  company: string;
+  companyUrl: string;
+  role: string;
+  period: string;
+  headline?: string;
+  intro?: string;
+  projects: TWorkProject[];
+}

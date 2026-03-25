@@ -43,78 +43,133 @@ export const projects: { title: string; href: string; description: string }[] =
     },
   ];
 
-export const roeblingData: {
-  title: string;
-  href: string;
-  description: string;
-}[] = [
-  {
-    title: "Showcase",
-    href: "/work/showcase",
-    description:
-      "Visual demos of key product experiences I designed and built",
-  },
-  {
-    title: "AI Chat Experience",
-    href: "/work/ai_chat",
-    description:
-      "Integrated AI chat for engineering editors with streaming responses and persistent state",
-  },
-  {
-    title: "Visual Graph Editors",
-    href: "/work/graph_editors",
-    description:
-      "Interactive React Flow editors with typed connections, auto-layout, and undo/redo",
-  },
-  {
-    title: "Real-time Collaboration",
-    href: "/work/realtime_collab",
-    description:
-      "Live multi-user editing with Supabase Realtime and custom subscription hooks",
-  },
-  {
-    title: "AI Analysis Dashboards",
-    href: "/work/ai_dashboards",
-    description:
-      "Schema-driven rendering system for AI-generated charts, tables, and cost breakdowns",
-  },
-  {
-    title: "Design System",
-    href: "/work/design_system",
-    description:
-      "55+ component library with light/dark theming and domain-specific UI patterns",
-  },
-];
+import { TWorkSection } from "./types";
 
-export const eabData: { title: string; href: string; description: string }[] = [
-  {
-    title: "Native App",
-    href: "/work/native_app",
-    description: "Building a new native experience for Navigate",
-  },
-  {
-    title: "CareerAscent",
-    href: "/work/careerascent",
-    description: "Building our new product from 0 -> 1",
-  },
-  {
-    title: "Visualization",
-    href: "/work/visualization",
-    description: "Upgrading our visualization library",
-  },
-  {
-    title: "HIL3",
-    href: "/work/hil3",
-    description: "Creating and enhancing our custom JSON parser language",
-  },
-  {
-    title: "UI Library",
-    href: "/work/ui_library",
-    description: "Comprehensive internal UI components library",
-  },
-];
+export const roeblingWork: TWorkSection = {
+  company: "Roebling",
+  companyUrl: "https://www.roebling.com",
+  role: "Founding Software Engineer",
+  period: "Apr. 2025 – Present",
+  headline:
+    "Built an AI-powered SaaS platform from an empty repository to production.",
+  intro:
+    "One of two founding engineers at Roebling — an AI-powered process modeling platform for biotech and chemical engineering. Architected and own the entire frontend, serving process engineers daily.",
+  projects: [
+    {
+      title: "AI Chat Experience",
+      description:
+        "Designed and built an integrated AI chat experience for engineering editors — a resizable sidebar with canvas viewport auto-panning, streaming responses, animated plan cards, and persistent conversation state across sessions. The chat enables process engineers to interact with AI directly within their workflow without context switching.",
+      techStack: ["Next.js", "TypeScript", "React", "Supabase", "Claude API", "Framer Motion"],
+      media: [
+        { type: "video", src: "/assets/work/roebling/AIChatFinalDemo.mp4" },
+      ],
+    },
+    {
+      title: "Login",
+      description:
+        "Polished authentication flow with smooth transitions and motion design.",
+      techStack: ["Next.js", "TypeScript", "React", "Framer Motion"],
+      media: [
+        { type: "video", src: "/assets/work/roebling/LoginFinalDemo.mp4" },
+      ],
+    },
+    {
+      title: "Visual Graph Editors",
+      description:
+        "Built interactive visual graph editors with React Flow — typed connections, auto-layout, undo/redo, and drag-to-reconnect — powering the core product experience used by process engineers daily. These editors allow engineers to model complex biotech and chemical engineering processes visually.",
+      techStack: ["React Flow", "TypeScript", "React", "Next.js", "Framer Motion"],
+    },
+    {
+      title: "Real-time Collaboration",
+      description:
+        "Built a real-time collaboration layer using Supabase Realtime — designed a generic subscription factory hook and 7 domain-specific hooks powering live updates across files, blocks, projects, and equipment for concurrent multi-user editing. Also designed a custom Git-like version control system (branching, merging, drafts, checkpoints) for collaborative engineering documents on PostgreSQL, enabling conflict-safe autosave.",
+      techStack: ["Supabase Realtime", "TypeScript", "React", "PostgreSQL", "WebSockets"],
+    },
+    {
+      title: "AI Analysis Dashboards",
+      description:
+        "Architected a schema-driven rendering system for AI-generated analysis dashboards that auto-renders charts, tables, and cost breakdowns from typed JSON contracts without per-dashboard code. This system enables the AI to produce rich, structured engineering analyses that render automatically in the frontend.",
+      techStack: ["TypeScript", "React", "Next.js", "Python", "FastAPI", "Claude API"],
+    },
+    {
+      title: "AI Automation Infrastructure",
+      description:
+        "Built AI-powered automation infrastructure: a two-Lambda ticket triage system using Claude and Bedrock with HMAC webhook security that reduced bug investigation time by 3x, and a nightly post-merge bug scanner that posts risk-sorted findings to Slack.",
+      techStack: ["AWS Lambda", "Claude API", "Bedrock", "TypeScript", "Slack API"],
+    },
+    {
+      title: "MCP Adoption & AI Tooling",
+      description:
+        "Pioneered MCP (Model Context Protocol) adoption across the team — configured tiered database access controls, wrote documentation, built 12 custom AI agent skills, and mentored engineers on AI-native development workflows.",
+      techStack: ["MCP", "Claude", "TypeScript", "PostgreSQL"],
+    },
+    {
+      title: "Structural Diff Engine",
+      description:
+        "Engineered a full-stack structural diff engine for nested engineering documents with cross-reference-aware warnings, backed by 39 tests. Enables engineers to compare document versions with precise, meaningful change detection.",
+      techStack: ["Python", "React", "TypeScript"],
+    },
+    {
+      title: "Design System",
+      description:
+        "Created a 55+ component design system with light/dark theming, animation, and domain-specific UI patterns including equation editors, formula fields, and stream visualizations. The system standardizes the product experience across the entire Roebling platform.",
+      techStack: ["React", "TypeScript", "Tailwind CSS", "Shadcn/Radix", "Framer Motion", "Storybook"],
+    },
+  ],
+};
 
-export const workData = [...roeblingData, ...eabData];
+export const eabWork: TWorkSection = {
+  company: "EAB",
+  companyUrl: "https://eab.com/",
+  role: "Software Engineer",
+  period: "Jan. 2021 – Aug. 2024",
+  projects: [
+    {
+      title: "Native App",
+      description:
+        "Contributed to developing a new native experience using the Ionic framework. This project involved rapidly rebuilding features from the old native app while adapting to an ongoing development process.",
+      techStack: ["LitElement", "Ionic", "Angular", "TypeScript"],
+    },
+    {
+      title: "CareerAscent",
+      description:
+        "Held a key role in developing CareerAscent from scratch, architecting the app using React, Material UI, and Tailwind. This startup-like project demanded rapid development and adaptability to tight deadlines.",
+      techStack: ["React", "Tailwind", "MaterialUI", "TypeScript"],
+    },
+    {
+      title: "Visualization",
+      description:
+        "Led the comprehensive upgrade of EAB's visualization library, managing the project from research to implementation. Selected and customized an open-source library, crafted each chart type, and mentored developers on utilizing the new charts.",
+      techStack: ["LitElement", "Chart.js", "TypeScript"],
+    },
+    {
+      title: "HIL3",
+      description:
+        "Helped develop HIL3, an improved version of EAB's custom JSON parser language. Enhanced readability and simplified syntax, reducing code complexity and easing adoption across multiple products.",
+      techStack: ["LitElement", "TypeScript"],
+    },
+    {
+      title: "UI Library",
+      description:
+        "Played a pivotal role in developing and maintaining an internal UI component library utilized by multiple product teams across the organization, enhancing consistency and efficiency in development processes.",
+      techStack: ["LitElement", "Polymer", "TypeScript"],
+    },
+  ],
+};
+
+// Compat export for creative components that still use the old shape
+export const workData = [
+  ...roeblingWork.projects.map((p) => ({
+    title: p.title,
+    href: "#",
+    description: p.description,
+  })),
+  ...eabWork.projects.map((p) => ({
+    title: p.title,
+    href: "#",
+    description: p.description,
+  })),
+];
 
 export const creative: { title: string; href: string; description: string }[] =
   [
