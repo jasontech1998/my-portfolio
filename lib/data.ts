@@ -61,7 +61,34 @@ export const roeblingWork: TWorkSection = {
         "Designed and built an integrated AI chat experience for engineering editors — a resizable sidebar with canvas viewport auto-panning, streaming responses, animated plan cards, and persistent conversation state across sessions. The chat enables process engineers to interact with AI directly within their workflow without context switching.",
       techStack: ["Next.js", "TypeScript", "React", "Supabase", "Claude API", "Framer Motion"],
       media: [
-        { type: "image", src: "/assets/work/roebling/AIMeetingDemo.gif" },
+        { type: "image", src: "/assets/work/roebling/ai-chat.gif" },
+      ],
+    },
+    {
+      title: "Visual Graph Editors",
+      description:
+        "Built interactive visual graph editors with React Flow — typed connections, auto-layout, undo/redo, and drag-to-reconnect — powering the core product experience used by process engineers daily. These editors allow engineers to model complex biotech and chemical engineering processes visually.",
+      techStack: ["React Flow", "TypeScript", "React", "Next.js", "Framer Motion"],
+      media: [
+        { type: "video", src: "/assets/work/roebling/visual-graph-editors.mp4" },
+      ],
+    },
+    {
+      title: "Structural Diff Engine",
+      description:
+        "Engineered a full-stack structural diff engine for nested engineering documents with cross-reference-aware warnings, backed by 39 tests. Enables engineers to compare document versions with precise, meaningful change detection.",
+      techStack: ["Python", "React", "TypeScript"],
+      media: [
+        { type: "image", src: "/assets/work/roebling/structural-diff.gif" },
+      ],
+    },
+    {
+      title: "Design System",
+      description:
+        "Created a 55+ component design system with light/dark theming, animation, and domain-specific UI patterns including equation editors, formula fields, and stream visualizations. The system standardizes the product experience across the entire Roebling platform.",
+      techStack: ["React", "TypeScript", "Tailwind CSS", "Shadcn/Radix", "Framer Motion", "Storybook"],
+      media: [
+        { type: "video", src: "/assets/work/roebling/design-system.mp4" },
       ],
     },
     {
@@ -70,7 +97,7 @@ export const roeblingWork: TWorkSection = {
         "Polished authentication flow with smooth transitions and motion design.",
       techStack: ["Next.js", "TypeScript", "React", "Framer Motion"],
       media: [
-        { type: "video", src: "/assets/work/roebling/LoginFinalDemo.mp4" },
+        { type: "video", src: "/assets/work/roebling/login.mp4" },
       ],
     },
     {
@@ -79,23 +106,8 @@ export const roeblingWork: TWorkSection = {
         "Built configurable default unit settings for blocks and projects, allowing process engineers to customize measurement units across their simulations.",
       techStack: ["Next.js", "TypeScript", "React"],
       media: [
-        { type: "image", src: "/assets/work/roebling/UnitSettingsMeetingDemo.gif" },
+        { type: "image", src: "/assets/work/roebling/unit-settings.gif" },
       ],
-    },
-    {
-      title: "Block Diff",
-      description:
-        "Visual interface for the structural diff engine, enabling engineers to compare block-level changes across document versions with clear, actionable diffs.",
-      techStack: ["React", "TypeScript", "Python"],
-      media: [
-        { type: "image", src: "/assets/work/roebling/BlockDiffMeetingDemo.gif" },
-      ],
-    },
-    {
-      title: "Visual Graph Editors",
-      description:
-        "Built interactive visual graph editors with React Flow — typed connections, auto-layout, undo/redo, and drag-to-reconnect — powering the core product experience used by process engineers daily. These editors allow engineers to model complex biotech and chemical engineering processes visually.",
-      techStack: ["React Flow", "TypeScript", "React", "Next.js", "Framer Motion"],
     },
     {
       title: "Real-time Collaboration",
@@ -120,18 +132,6 @@ export const roeblingWork: TWorkSection = {
       description:
         "Pioneered MCP (Model Context Protocol) adoption across the team — configured tiered database access controls, wrote documentation, built 12 custom AI agent skills, and mentored engineers on AI-native development workflows.",
       techStack: ["MCP", "Claude", "TypeScript", "PostgreSQL"],
-    },
-    {
-      title: "Structural Diff Engine",
-      description:
-        "Engineered a full-stack structural diff engine for nested engineering documents with cross-reference-aware warnings, backed by 39 tests. Enables engineers to compare document versions with precise, meaningful change detection.",
-      techStack: ["Python", "React", "TypeScript"],
-    },
-    {
-      title: "Design System",
-      description:
-        "Created a 55+ component design system with light/dark theming, animation, and domain-specific UI patterns including equation editors, formula fields, and stream visualizations. The system standardizes the product experience across the entire Roebling platform.",
-      techStack: ["React", "TypeScript", "Tailwind CSS", "Shadcn/Radix", "Framer Motion", "Storybook"],
     },
   ],
 };
