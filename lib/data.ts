@@ -61,7 +61,16 @@ export const roeblingWork: TWorkSection = {
         "Designed and built an integrated AI chat experience for engineering editors — a resizable sidebar with canvas viewport auto-panning, streaming responses, animated plan cards, and persistent conversation state across sessions. The chat enables process engineers to interact with AI directly within their workflow without context switching.",
       techStack: ["Next.js", "TypeScript", "React", "Supabase", "Claude API", "Framer Motion"],
       media: [
-        { type: "image", src: "/assets/work/roebling/ai-chat.gif" },
+        { type: "video", src: "/assets/work/roebling/ai-chat.mp4" },
+      ],
+    },
+    {
+      title: "Roebot — AI Agent Orchestrator",
+      description:
+        "Co-building an autonomous AI agent system that listens for events across Linear, Slack, and Notion, then routes tasks to isolated Claude agents running in Docker containers. For code tasks, agents spin up with a full git checkout, write and test code, push branches, and open PRs. For non-code tasks, they research and respond directly. Built the real-time monitoring dashboard — a React SPA where the team supervises active jobs, streams Claude output logs, and visualizes the trigger/agent topology. Evolved from prior AI automation infrastructure (Lambda-based triage and bug scanning) into a unified orchestration platform.",
+      techStack: ["React", "TypeScript", "Docker", "Claude API", "AWS", "Linear API", "Slack API"],
+      media: [
+        { type: "video", src: "/assets/work/roebling/roebot-initial.mp4" },
       ],
     },
     {
@@ -79,7 +88,7 @@ export const roeblingWork: TWorkSection = {
         "Engineered a full-stack structural diff engine for nested engineering documents with cross-reference-aware warnings, backed by 39 tests. Enables engineers to compare document versions with precise, meaningful change detection.",
       techStack: ["Python", "React", "TypeScript"],
       media: [
-        { type: "image", src: "/assets/work/roebling/structural-diff.gif" },
+        { type: "video", src: "/assets/work/roebling/structural-diff.mp4" },
       ],
     },
     {
@@ -106,7 +115,7 @@ export const roeblingWork: TWorkSection = {
         "Built configurable default unit settings for blocks and projects, allowing process engineers to customize measurement units across their simulations.",
       techStack: ["Next.js", "TypeScript", "React"],
       media: [
-        { type: "image", src: "/assets/work/roebling/unit-settings.gif" },
+        { type: "video", src: "/assets/work/roebling/unit-settings.mp4" },
       ],
     },
     {

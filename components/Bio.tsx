@@ -4,9 +4,9 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 const highlights = [
-  "Built the product from the ground up as one of two founding engineers",
-  "Pioneered AI-native workflows across the team — built 12 custom MCP skills, a two-Lambda ticket triage system, and a nightly bug scanner with Claude",
-  "Built AI chat experiences, schema-driven analysis dashboards, and AI infrastructure for internal automations",
+  "Founding engineer who built the product from scratch — own the frontend architecture and set the patterns the entire team builds on",
+  "Co-building Roebot, an autonomous AI agent orchestration system — routes tasks from Linear, Slack, and Notion to isolated Claude agents that write code, open PRs, and triage bugs",
+  "Shipped AI chat experiences, schema-driven generative UI dashboards, and automation infrastructure powering internal workflows",
 ];
 
 export function Bio() {
@@ -24,13 +24,13 @@ export function Bio() {
         ))}
       </div>
 
-      <p className="mt-4 sm:mt-6 text-foreground">
+      <p className="mt-4 sm:mt-6 text-sm text-muted-foreground">
         I share my thinking and taste on{" "}
         <a
           href="https://x.com/lockedinagain"
           target="_blank"
           rel="noopener noreferrer"
-          className="underline decoration-sky-500 font-medium hover:decoration-2 transition-all"
+          className="underline decoration-sky-500 hover:decoration-2 transition-all"
         >
           X
         </a>
