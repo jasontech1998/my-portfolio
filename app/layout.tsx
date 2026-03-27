@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "@/components/theme/theme-provider";
+import { LenisProvider } from "@/components/providers/LenisProvider";
 import { Navbar } from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -8,6 +9,7 @@ import { Inter } from "next/font/google";
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 
+import "lenis/dist/lenis.css";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], display: 'swap' });
@@ -50,16 +52,18 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${GeistMono.className} antialiased min-h-screen bg-background text-foreground`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="relative flex flex-col min-h-screen max-w-2xl w-full mx-auto">
-            <div className="px-4 md:px-0 w-full">
-              <Navbar />
-              <main className="flex-grow pt-14">
-                {children}
-              </main>
-              <Footer />
+          <LenisProvider>
+<div className="relative flex flex-col min-h-screen max-w-2xl w-full mx-auto">
+              <div className="px-4 md:px-0 w-full">
+                <Navbar />
+                <main className="flex-grow pt-14">
+                  {children}
+                </main>
+                <Footer />
+              </div>
             </div>
-          </div>
-          <SpeedInsights />
+            <SpeedInsights />
+          </LenisProvider>
         </ThemeProvider>
       </body>
     </html>

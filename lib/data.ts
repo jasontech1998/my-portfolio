@@ -40,33 +40,6 @@ export const projects: TProject[] = [
     demo: "https://likemix.vercel.app/",
     note: "To use the demo, please contact me for Spotify API access (currently in dev mode).",
   },
-  {
-    title: "Real Time Trivia Game",
-    description:
-      "A fast-paced, real-time trivia game where two players go head-to-head, racing to answer questions quickly and accurately. Leverages WebSocket technology for instant updates and seamless interaction.",
-    techStack: ["React", "TypeScript", "WebSocket API", "Tailwind"],
-    media: [{ type: "video", src: "/assets/projects/triviagame_final.mp4" }],
-    github: "https://github.com/jasontech1998/react-trivia-game",
-  },
-  {
-    title: "Podspot",
-    description:
-      "An app to listen, comment, and rate your favorite podcasts.",
-    techStack: ["React", "React Router", "Redux", "Firebase", "Spotify Web API"],
-    media: [{ type: "video", src: "/assets/projects/podspot.mp4" }],
-    github: "https://github.com/jasontech1998/spotify-comment-app",
-  },
-  {
-    title: "Pumpr",
-    description:
-      "A Fitness Social Media Platform for users to meet workout partners with similar strength, goals and schedules.",
-    techStack: ["React", "React Router", "Redux", "Firebase"],
-    media: [
-      { type: "image", src: "/assets/projects/pumpr.png" },
-      { type: "image", src: "/assets/projects/pumpr_design.jpeg" },
-    ],
-    github: "https://github.com/jasontech1998/pumpr-app",
-  },
 ];
 
 
@@ -252,34 +225,5 @@ export const creative: TCreativeItem[] = [
     techStack: ["React", "TypeScript", "Framer Motion", "Tailwind"],
     date: "June 2024",
     componentKey: "CustomNav",
-  },
-  {
-    title: "Custom Stack Items",
-    description: "Custom stack nav items built with Framer Motion",
-    techStack: ["React", "TypeScript", "Framer Motion", "Tailwind"],
-    date: "June 2024",
-    componentKey: "CustomStackItems",
-  },
-  {
-    title: "Custom Animated Button",
-    description: "Button with custom loading animation",
-    techStack: ["React", "TypeScript", "Framer Motion", "Tailwind"],
-    date: "June 2024",
-    componentKey: "AnimatedButton",
-  },
-  {
-    title: "Custom Hover Card",
-    description: "Card that shows additional content on hover",
-    techStack: ["React", "TypeScript", "Framer Motion", "Tailwind"],
-    date: "June 2024",
-    componentKey: "CustomHoverCard",
-    componentProps: {
-      image_path: "/assets/stripe_logo.svg",
-      subtitle: "Architecting a live look at reliability: Stripe's viral Black Friday site",
-      stats: [
-        { label: "Uptime", value: "100%" },
-        { label: "Edge requests", value: "17m+" },
-      ],
-    },
   },
 ];
