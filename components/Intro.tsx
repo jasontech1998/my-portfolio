@@ -20,7 +20,7 @@ export function Intro() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
       >
-        Founding software engineer at{" "}
+        Founding product engineer at{" "}
         <Link
           href="/work"
           className="underline decoration-sky-500 font-medium hover:decoration-2 transition-all"

@@ -1,6 +1,6 @@
 "use client";
-import { motion } from "framer-motion";
-import { useEffect, useState, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState, useRef, useCallback } from "react";
 
 interface Position {
   x: number;
@@ -12,6 +12,9 @@ interface ContentSize {
   width: number;
   height: number;
 }
+
+const WIN_TOLERANCE = 8; // degrees from level to count as a win
+const TILTED_ANGLE = 15; // initial tilt for the challenge cube
 
 const ExpandingCubes = ({
   children,
@@ -25,7 +28,16 @@ const ExpandingCubes = ({
   });
   const [hoveredCube, setHoveredCube] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [challengeCube, setChallengeCube] = useState<number | null>(null);
+  const [won, setWon] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
+
+  // Pick a random challenge cube on desktop after positions settle
+  useEffect(() => {
+    if (positions.length > 0 && !isMobile && challengeCube === null) {
+      setChallengeCube(Math.floor(Math.random() * positions.length));
+    }
+  }, [positions, isMobile]);
 
   useEffect(() => {
     if (contentRef.current) {
@@ -74,7 +86,6 @@ const ExpandingCubes = ({
         : baseHorizontalSpacing;
 
       if (mobile) {
-        // 4 cubes on mobile — corners only, more breathing room
         return [
           { x: -horizontalSpacing, y: -totalHeight / 2 + 50, floatDelay: 0 },
           { x: horizontalSpacing, y: -totalHeight / 2 + 50, floatDelay: 0.5 },
@@ -120,72 +131,199 @@ const ExpandingCubes = ({
 
   const containerHeight = Math.max(200, contentSize.height + 100);
 
+  // Track rotation per cube so we can wind down smoothly
+  const cubeRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const animFrames = useRef<Map<number, number>>(new Map());
+  const rotations = useRef<Map<number, number>>(new Map());
+  const spinDelays = useRef<Map<number, NodeJS.Timeout>>(new Map());
+
+  // Initialize challenge cube's rotation to the tilted angle
+  useEffect(() => {
+    if (challengeCube !== null && !won) {
+      rotations.current.set(challengeCube, TILTED_ANGLE);
+      const el = cubeRefs.current[challengeCube];
+      if (el) {
+        el.style.transform = `rotate(${TILTED_ANGLE}deg)`;
+      }
+    }
+  }, [challengeCube, positions]);
+
+  const startSpin = useCallback((index: number) => {
+    const el = cubeRefs.current[index];
+    if (!el) return;
+    // Clear any ongoing transition
+    el.style.transition = "";
+
+    const speed = 120; // degrees per second
+    let lastTime = performance.now();
+
+    const tick = (now: number) => {
+      const dt = (now - lastTime) / 1000;
+      lastTime = now;
+      const current = rotations.current.get(index) ?? 0;
+      const next = current + speed * dt;
+      rotations.current.set(index, next);
+      el.style.transform = `rotate(${next}deg)`;
+      animFrames.current.set(index, requestAnimationFrame(tick));
+    };
+
+    animFrames.current.set(index, requestAnimationFrame(tick));
+  }, []);
+
+  const stopSpin = useCallback((index: number, hasWon?: boolean) => {
+    const frame = animFrames.current.get(index);
+    if (frame) cancelAnimationFrame(frame);
+    animFrames.current.delete(index);
+
+    const el = cubeRefs.current[index];
+    if (!el) return;
+
+    const current = rotations.current.get(index) ?? 0;
+
+    // After winning, all cubes smoothly reset to nearest level position
+    if (hasWon && index !== challengeCube) {
+      const normalized = ((current % 360) + 360) % 360;
+      const nearest = [0, 90, 180, 270, 360].reduce((prev, curr) =>
+        Math.abs(normalized - curr) < Math.abs(normalized - prev) ? curr : prev
+      );
+      const target = current + (nearest - normalized);
+      el.style.transition = "transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1)";
+      el.style.transform = `rotate(${target}deg)`;
+      const onEnd = () => {
+        el.style.transition = "";
+        rotations.current.set(index, 0);
+        el.style.transform = `rotate(0deg)`;
+        el.removeEventListener("transitionend", onEnd);
+      };
+      el.addEventListener("transitionend", onEnd);
+      return;
+    }
+
+    // Smoothly wind down with a small overshoot (30deg momentum)
+    const target = current + 30;
+    el.style.transition = "transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1)";
+    el.style.transform = `rotate(${target}deg)`;
+
+    const onEnd = () => {
+      el.style.transition = "";
+      rotations.current.set(index, target % 360);
+      el.style.transform = `rotate(${target % 360}deg)`;
+      el.removeEventListener("transitionend", onEnd);
+
+      // Check win condition for challenge cube
+      if (index === challengeCube && !won) {
+        const finalAngle = ((target % 360) + 360) % 360;
+        // Check if close to any level position (0, 90, 180, 270)
+        const isLevel = [0, 90, 180, 270].some(
+          (a) => Math.abs(finalAngle - a) <= WIN_TOLERANCE || Math.abs(finalAngle - a - 360) <= WIN_TOLERANCE
+        );
+        if (isLevel) {
+          const nearest = [0, 90, 180, 270, 360].reduce((prev, curr) =>
+            Math.abs(finalAngle - curr) < Math.abs(finalAngle - prev) ? curr : prev
+          );
+          setWon(true);
+          rotations.current.set(index, nearest % 360);
+          el.style.transform = `rotate(${nearest}deg)`;
+        }
+      }
+    };
+    el.addEventListener("transitionend", onEnd);
+  }, [challengeCube, won]);
+
+  const handleHover = useCallback((index: number) => {
+    setHoveredCube(index);
+    // Delay spin start so quick mouse passes don't trigger it
+    const timeout = setTimeout(() => {
+      startSpin(index);
+      spinDelays.current.delete(index);
+    }, 150);
+    spinDelays.current.set(index, timeout);
+  }, [startSpin]);
+
+  const handleLeave = useCallback((index: number | null) => {
+    if (index !== null) {
+      // Cancel pending spin if mouse left before delay
+      const pending = spinDelays.current.get(index);
+      if (pending) {
+        clearTimeout(pending);
+        spinDelays.current.delete(index);
+      } else {
+        stopSpin(index, won);
+      }
+    }
+    setHoveredCube(null);
+  }, [stopSpin, won]);
+
   return (
     <div className="relative w-full overflow-visible">
       <div
         className="relative w-full flex items-center justify-center mb-0 overflow-visible"
         style={{ minHeight: `${containerHeight}px` }}
       >
-        {positions.map((position, index) => (
-          <motion.div
-            key={index}
-            className="absolute w-6 h-6 bg-white dark:bg-black border-2 border-black dark:border-white rounded-md shadow-sm backdrop-blur-[1px]"
-            initial={{ x: 0, y: 0, opacity: 0, scale: 2.5 }}
-            animate={{
-              x: position.x,
-              y: position.y,
-              opacity: 1,
-              scale: 1,
-            }}
-            whileHover={{
-              scale: 1.3,
-              rotate: 45,
-              boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.2)",
-              borderRadius: "4px",
-              transition: {
-                duration: 0.2,
-                type: "tween" as const,
-                ease: "easeOut" as const,
-              },
-            }}
-            whileTap={
-              isMobile
-                ? {
-                    scale: 1.3,
-                    rotate: 45,
-                    boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.2)",
-                    borderRadius: "4px",
-                    transition: { duration: 0.2 },
-                  }
-                : undefined
-            }
-            transition={{
-              type: "spring" as const,
-              stiffness: 80,
-              damping: 22,
-              delay: 0.3 + index * 0.07,
-            }}
-            onMouseEnter={() => setHoveredCube(index)}
-            onMouseLeave={() => setHoveredCube(null)}
-            style={{
-              zIndex: hoveredCube === index ? 20 : 1,
-            }}
-          >
-            {/* Subtle floating animation after settling */}
+        {positions.map((position, index) => {
+          const isHovered = hoveredCube === index;
+          const isWon = won && index === challengeCube;
+          return (
             <motion.div
-              className="w-full h-full"
+              key={index}
+              className="absolute"
+              initial={{ x: 0, y: 0, opacity: 0 }}
               animate={{
-                y: [0, -4, 0],
+                x: position.x,
+                y: position.y,
+                opacity: 1,
               }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1.5 + position.floatDelay,
+              transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+              onMouseEnter={() => handleHover(index)}
+              onMouseLeave={() => handleLeave(index)}
+              onTouchStart={() => handleHover(index)}
+              onTouchEnd={() => setTimeout(() => handleLeave(index), 1500)}
+              style={{
+                zIndex: isHovered ? 20 : 1,
               }}
-            />
-          </motion.div>
-        ))}
+            >
+              <motion.div
+                animate={{
+                  y: isHovered ? 0 : [0, -4, 0],
+                }}
+                transition={
+                  isHovered
+                    ? { duration: 0.2 }
+                    : {
+                        duration: 3,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: 1.5 + position.floatDelay,
+                      }
+                }
+              >
+                <div className="relative">
+                  <div
+                    ref={(el) => { cubeRefs.current[index] = el; }}
+                    className={`w-6 h-6 bg-white dark:bg-black border-2 border-black dark:border-white rounded-md shadow-sm ${
+                      isWon ? "ring-2 ring-sky-500 ring-offset-1 ring-offset-white dark:ring-offset-black" : ""
+                    }`}
+                    style={isWon ? { transform: "rotate(0deg)" } : undefined}
+                  />
+                  {/* Win message */}
+                  <AnimatePresence>
+                    {isWon && (
+                      <motion.span
+                        initial={{ opacity: 0, y: 4 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-[10px] text-sky-500 font-medium whitespace-nowrap"
+                      >
+                        nice.
+                      </motion.span>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </motion.div>
+            </motion.div>
+          );
+        })}
 
         <motion.div
           variants={contentVariants}
