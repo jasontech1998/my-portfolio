@@ -13,13 +13,15 @@ const navItems = [
   { href: "/creative", label: "Creative" },
 ];
 
+let hasPlayedNavAnim = false;
+
 export function Navbar() {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const [scope, animate] = useAnimate();
   const measureRef = useRef<HTMLDivElement>(null);
-  const [showItems, setShowItems] = useState(!isHome);
-  const [animDone, setAnimDone] = useState(!isHome);
+  const [showItems, setShowItems] = useState(!isHome || hasPlayedNavAnim);
+  const [animDone, setAnimDone] = useState(!isHome || hasPlayedNavAnim);
   const isAnimating = useRef(false);
 
   // Clean up inline animation styles once done so CSS classes take over
@@ -40,6 +42,13 @@ export function Navbar() {
       setShowItems(true);
       setAnimDone(true);
       isAnimating.current = false;
+      return;
+    }
+
+    // Skip animation if already played once this session
+    if (hasPlayedNavAnim) {
+      setShowItems(true);
+      setAnimDone(true);
       return;
     }
 
@@ -93,6 +102,7 @@ export function Navbar() {
       setShowItems(true);
       setAnimDone(true);
       isAnimating.current = false;
+      hasPlayedNavAnim = true;
     };
 
     run();

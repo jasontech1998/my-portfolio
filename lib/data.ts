@@ -1,49 +1,75 @@
-export const projects: { title: string; href: string; description: string }[] =
-  [
-    {
-      title: "Silhouette",
-      href: "/projects/silhouette",
-      description:
-        "Ambient computing technology that enhances spaces while vanishing into the background.",
-    },
-    {
-      title: "Linear Dashboard",
-      href: "/projects/lineardashboard",
-      description:
-        "Linear-inspired dashboard with advanced due date indicators for efficient task management.",
-    },
-    {
-      title: "FestiFaves",
-      href: "/projects/festifaves",
-      description:
-        "Leverages AI to curate personalized Spotify playlists based on festival lineups, enhancing your music discovery experience",
-    },
-    {
-      title: "LikeMix",
-      href: "/projects/likemix",
-      description:
-        "Automate the sharing of your liked songs from any album",
-    },
-    {
-      title: "Real Time Trivia Game",
-      href: "/projects/triviagame",
-      description:
-        "A fast-paced, real-time game challenging players to test their knowledge across diverse topics",
-    },
-    {
-      title: "Podspot",
-      href: "/projects/podspot",
-      description: "Listen, comment and rate your favorite podcasts",
-    },
-    {
-      title: "Pumpr",
-      href: "/projects/pumpr",
-      description:
-        "Fitness Social Media Platform for users to meet workout partners with similar strength, goals and schedules",
-    },
-  ];
+import { TProject, TCreativeItem, TWorkSection } from "./types";
 
-import { TWorkSection } from "./types";
+export const projects: TProject[] = [
+  {
+    title: "Silhouette",
+    description:
+      "A marketing landing page for a computing technology brand, built with Tremor and Next.js as an exercise in high-polish landing page design.",
+    techStack: ["Next.js", "React", "TypeScript", "Tailwind", "Framer Motion", "Tremor"],
+    media: [{ type: "video", src: "/assets/projects/silhouette-demo.mp4" }],
+    github: "https://github.com/jasontech1998/silhouette-exercise",
+    demo: "https://silhouette-exercise.vercel.app/",
+    note: "Silhouette is a fictional/concept company created for demonstration purposes.",
+  },
+  {
+    title: "Linear Dashboard",
+    description:
+      "A Next.js project featuring a Linear-inspired dashboard with advanced due date indicators for efficient task management.",
+    techStack: ["Next.js", "React", "TypeScript", "Tailwind", "hello-pangea/dnd"],
+    media: [{ type: "video", src: "/assets/projects/lineardashboard_demo.mp4" }],
+    github: "https://github.com/jasontech1998/linear-dashboard",
+    demo: "https://linear-dashboard.vercel.app/",
+  },
+  {
+    title: "FestiFaves",
+    description:
+      "Leverages the OpenAI API to analyze festival lineups and generate personalized Spotify playlists. Uses advanced language models to understand artist styles and user preferences, with AWS S3 for scalable storage of festival lineup images.",
+    techStack: ["Next.js", "React", "TypeScript", "NextAuth", "OpenAI API", "Spotify Web API", "AWS", "Tailwind", "shadcn"],
+    media: [{ type: "video", src: "/assets/projects/festifaves_demo.mp4" }],
+    github: "https://github.com/jasontech1998/festifaves",
+    demo: "https://festifaves.vercel.app/",
+    note: "To use the demo, please contact me for Spotify API access (currently in dev mode).",
+  },
+  {
+    title: "LikeMix",
+    description:
+      "An app designed to automate the sharing of your liked songs from any album, making it easy for music enthusiasts to share their favorite tracks effortlessly.",
+    techStack: ["Next.js", "React", "TypeScript", "NextAuth", "Spotify Web API", "Tailwind", "shadcn"],
+    media: [{ type: "video", src: "/assets/projects/likemix_demo.mp4" }],
+    github: "https://github.com/jasontech1998/likemix",
+    demo: "https://likemix.vercel.app/",
+    note: "To use the demo, please contact me for Spotify API access (currently in dev mode).",
+  },
+  {
+    title: "Real Time Trivia Game",
+    description:
+      "A fast-paced, real-time trivia game where two players go head-to-head, racing to answer questions quickly and accurately. Leverages WebSocket technology for instant updates and seamless interaction.",
+    techStack: ["React", "TypeScript", "WebSocket API", "Tailwind"],
+    media: [{ type: "video", src: "/assets/projects/triviagame_final.mp4" }],
+    github: "https://github.com/jasontech1998/react-trivia-game",
+  },
+  {
+    title: "Podspot",
+    description:
+      "An app to listen, comment, and rate your favorite podcasts.",
+    techStack: ["React", "React Router", "Redux", "Firebase", "Spotify Web API"],
+    media: [{ type: "video", src: "/assets/projects/podspot.mp4" }],
+    github: "https://github.com/jasontech1998/spotify-comment-app",
+  },
+  {
+    title: "Pumpr",
+    description:
+      "A Fitness Social Media Platform for users to meet workout partners with similar strength, goals and schedules.",
+    techStack: ["React", "React Router", "Redux", "Firebase"],
+    media: [
+      { type: "image", src: "/assets/projects/pumpr.png" },
+      { type: "image", src: "/assets/projects/pumpr_design.jpeg" },
+    ],
+    github: "https://github.com/jasontech1998/pumpr-app",
+  },
+];
+
+
 
 export const roeblingWork: TWorkSection = {
   company: "Roebling",
@@ -198,46 +224,62 @@ export const workData = [
   })),
 ];
 
-export const creative: { title: string; href: string; description: string }[] =
-  [
-    {
-      title: "Custom Article Links",
-      href: "/creative/custom_article_links",
-      description: "Article links with animation",
+export const creative: TCreativeItem[] = [
+  {
+    title: "Custom Article Links",
+    description: "Grid system article links with animated hover motion",
+    techStack: ["React", "TypeScript", "Tailwind"],
+    date: "February 2025",
+    componentKey: "ListArticleLink",
+  },
+  {
+    title: "Custom Cubes Animation",
+    description: "Expanding cube grid that transforms to show content within using Framer Motion animations",
+    techStack: ["React", "TypeScript", "Framer Motion", "Tailwind"],
+    date: "February 2025",
+    componentKey: "ExpandingCubes",
+  },
+  {
+    title: "Custom Animated Counter",
+    description: "A React component that smoothly animates numbers incrementing with a flipping effect",
+    techStack: ["React", "TypeScript"],
+    date: "January 2025",
+    componentKey: "AnimatedNumber",
+  },
+  {
+    title: "Custom Desktop Navbar",
+    description: "A custom desktop navbar using spring animation from Framer Motion",
+    techStack: ["React", "TypeScript", "Framer Motion", "Tailwind"],
+    date: "June 2024",
+    componentKey: "CustomNav",
+  },
+  {
+    title: "Custom Stack Items",
+    description: "Custom stack nav items built with Framer Motion",
+    techStack: ["React", "TypeScript", "Framer Motion", "Tailwind"],
+    date: "June 2024",
+    componentKey: "CustomStackItems",
+  },
+  {
+    title: "Custom Animated Button",
+    description: "Button with custom loading animation",
+    techStack: ["React", "TypeScript", "Framer Motion", "Tailwind"],
+    date: "June 2024",
+    componentKey: "AnimatedButton",
+  },
+  {
+    title: "Custom Hover Card",
+    description: "Card that shows additional content on hover",
+    techStack: ["React", "TypeScript", "Framer Motion", "Tailwind"],
+    date: "June 2024",
+    componentKey: "CustomHoverCard",
+    componentProps: {
+      image_path: "/assets/stripe_logo.svg",
+      subtitle: "Architecting a live look at reliability: Stripe's viral Black Friday site",
+      stats: [
+        { label: "Uptime", value: "100%" },
+        { label: "Edge requests", value: "17m+" },
+      ],
     },
-    {
-      title: "Custom Cubes Animation",
-      href: "/creative/custom_expand_cubes",
-      description: "Cube grid with content animation",
-    },
-    {
-      title: "Custom Animated Counter",
-      href: "/creative/custom_animated_counter",
-      description: "Incrementing number ticker",
-    },
-    {
-      title: "Custom Chat",
-      href: "/creative/custom_chat",
-      description: "AI Chat about my resume",
-    },
-    {
-      title: "Custom Desktop Navbar",
-      href: "/creative/custom_nav",
-      description: "Navbar with spring hover animation",
-    },
-    {
-      title: "Custom Stack Items",
-      href: "/creative/custom_stack_items",
-      description: "Stacked nav items with custom hover animation",
-    },
-    {
-      title: "Custom Animated Button",
-      href: "/creative/custom_button",
-      description: "Button with custom loading animation",
-    },
-    {
-      title: "Custom Hover Card",
-      href: "/creative/custom_hover_card",
-      description: "Card that shows additional content on hover",
-    },
-  ];
+  },
+];

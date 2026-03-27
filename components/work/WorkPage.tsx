@@ -7,6 +7,7 @@ import { VideoProject } from "./VideoProject";
 import { StatCounters } from "./StatCounters";
 import { ProjectGrid } from "./ProjectGrid";
 import { SectionDivider } from "./SectionDivider";
+import { CubeDecoration } from "@/components/CubeDecoration";
 
 const ease = [0.25, 0.1, 0.25, 1] as const;
 
@@ -15,7 +16,8 @@ export function WorkPage() {
   const textProjects = roeblingWork.projects.filter((p) => !p.media?.length);
 
   return (
-    <section>
+    <section className="relative">
+      <CubeDecoration />
       {/* Page title */}
       <motion.h1
         initial={{ opacity: 0, y: 8 }}

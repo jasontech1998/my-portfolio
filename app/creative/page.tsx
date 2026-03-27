@@ -1,14 +1,5 @@
-import { creative } from "@/lib/data";
-
-import { AnimatedItems } from '@/components/AnimatedItems';
+import { CreativePage } from "@/components/creative/CreativePage";
 
 export default function Page() {
-  return (
-    <section>
-      <h1 className="text-2xl sm:text-3xl self-end font-semibold tracking-tighter">
-        Creative
-      </h1>
-      <AnimatedItems items={creative}/>
-    </section>
-  );
+  return <CreativePage />;
 }

@@ -6,13 +6,15 @@ import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import ThemeToggle from "./theme/theme-toggle";
 
+let hasPlayedFooterAnim = false;
+
 export default function Footer() {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const [scope, animate] = useAnimate();
   const measureRef = useRef<HTMLDivElement>(null);
-  const [showContent, setShowContent] = useState(!isHome);
-  const [animDone, setAnimDone] = useState(!isHome);
+  const [showContent, setShowContent] = useState(!isHome || hasPlayedFooterAnim);
+  const [animDone, setAnimDone] = useState(!isHome || hasPlayedFooterAnim);
   const isAnimating = useRef(false);
 
   // Clean up inline animation styles once done so CSS classes take over
@@ -33,6 +35,13 @@ export default function Footer() {
       setShowContent(true);
       setAnimDone(true);
       isAnimating.current = false;
+      return;
+    }
+
+    // Skip animation if already played once this session
+    if (hasPlayedFooterAnim) {
+      setShowContent(true);
+      setAnimDone(true);
       return;
     }
 
@@ -92,6 +101,7 @@ export default function Footer() {
       setShowContent(true);
       setAnimDone(true);
       isAnimating.current = false;
+      hasPlayedFooterAnim = true;
     };
 
     run();

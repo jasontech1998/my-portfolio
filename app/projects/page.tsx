@@ -1,16 +1,5 @@
-import { projects } from "@/lib/data";
-
-import { AnimatedItems } from '@/components/AnimatedItems';
+import { ProjectsPage } from "@/components/projects/ProjectsPage";
 
 export default function Page() {
-
-
-  return (
-    <section>
-      <h1 className="text-2xl sm:text-3xl self-end font-semibold tracking-tighter">
-        Projects
-      </h1>
-      <AnimatedItems items={projects}/>
-    </section>
-  );
+  return <ProjectsPage />;
 }
