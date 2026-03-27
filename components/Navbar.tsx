@@ -5,12 +5,19 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { motion, useAnimate } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { Home, Briefcase, FolderOpen, Sparkles } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const navItems = [
-  { href: "/", label: "Home", exact: true },
-  { href: "/work", label: "Work" },
-  { href: "/projects", label: "Projects" },
-  { href: "/creative", label: "Creative" },
+  { href: "/", label: "Home", icon: Home, exact: true },
+  { href: "/work", label: "Work", icon: Briefcase },
+  { href: "/projects", label: "Projects", icon: FolderOpen },
+  { href: "/creative", label: "Creative", icon: Sparkles },
 ];
 
 let hasPlayedNavAnim = false;
@@ -62,7 +69,7 @@ export function Navbar() {
     const el = scope.current;
     if (!el) return;
 
-    const targetW = measureRef.current?.offsetWidth ?? 300;
+    const targetW = measureRef.current?.offsetWidth ?? 200;
     const targetH = measureRef.current?.offsetHeight ?? 42;
     const isSm = window.innerWidth >= 640;
     const endLeft = isSm ? 16 : 12;
@@ -109,22 +116,30 @@ export function Navbar() {
   }, [isHome, animate, scope]);
 
   const navContent = (
-    <ul className="flex items-center space-x-0 sm:space-x-1">
-      {navItems.map(({ href, label, exact }) => {
+    <ul className="flex items-center space-x-1">
+      {navItems.map(({ href, label, icon: Icon, exact }) => {
         const isActive = exact
           ? pathname === href
           : pathname.startsWith(href);
         return (
           <li key={href}>
-            <Link
-              href={href}
-              className={cn(
-                "inline-flex h-10 items-center justify-center px-2 sm:px-4 py-2 text-xs sm:text-sm font-medium transition-colors text-muted-foreground hover:text-foreground",
-                isActive && "text-foreground"
-              )}
-            >
-              {label}
-            </Link>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Link
+                  href={href}
+                  className={cn(
+                    "inline-flex h-9 w-9 items-center justify-center rounded-md transition-colors text-muted-foreground hover:text-foreground hover:bg-accent",
+                    isActive && "text-foreground"
+                  )}
+                  aria-label={label}
+                >
+                  <Icon className="w-4 h-4" />
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>{label}</p>
+              </TooltipContent>
+            </Tooltip>
           </li>
         );
       })}
@@ -132,7 +147,7 @@ export function Navbar() {
   );
 
   return (
-    <>
+    <TooltipProvider delayDuration={100}>
       {/* Hidden clone for measuring final nav dimensions */}
       {isHome && !animDone && (
         <div
@@ -140,7 +155,7 @@ export function Navbar() {
           className="fixed opacity-0 pointer-events-none -z-10 top-3 left-3 sm:left-4"
           aria-hidden="true"
         >
-          <nav className="backdrop-blur-xl bg-white dark:bg-black rounded-md px-1 sm:px-2 py-1 shadow-sm border-2 border-black dark:border-white">
+          <nav className="backdrop-blur-xl bg-white dark:bg-black rounded-md p-1 shadow-sm border-2 border-black dark:border-white">
             {navContent}
           </nav>
         </div>
@@ -153,7 +168,7 @@ export function Navbar() {
           (!isHome || animDone) && "top-3 left-3 sm:left-4"
         )}
       >
-        <nav className="w-full h-full backdrop-blur-xl bg-white dark:bg-black rounded-md px-1 sm:px-2 py-1 shadow-sm border-2 border-black dark:border-white overflow-hidden whitespace-nowrap">
+        <nav className="w-full h-full backdrop-blur-xl bg-white dark:bg-black rounded-md p-1 shadow-sm border-2 border-black dark:border-white whitespace-nowrap">
           {showItems ? (
             <motion.div
               initial={isHome ? { opacity: 0 } : false}
@@ -165,6 +180,6 @@ export function Navbar() {
           ) : null}
         </nav>
       </div>
-    </>
+    </TooltipProvider>
   );
 }

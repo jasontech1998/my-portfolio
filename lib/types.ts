@@ -8,6 +8,7 @@ export interface TProject {
   title: string;
   description: string;
   techStack: string[];
+  date?: string;
   media?: {
     type: "video" | "image";
     src: string;

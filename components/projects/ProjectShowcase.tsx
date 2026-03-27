@@ -31,7 +31,10 @@ export function ProjectShowcase({ project }: { project: TProject }) {
       className="space-y-4"
     >
       <div>
-        <h3 className="text-base font-medium">{project.title}</h3>
+        <div className="flex flex-wrap items-baseline justify-between gap-2">
+          <h3 className="text-base font-medium">{project.title}</h3>
+          {project.date && <span className="text-sm text-muted-foreground">{project.date}</span>}
+        </div>
         <p className="text-sm text-muted-foreground mt-1.5 leading-relaxed max-w-prose">
           {project.description}
         </p>

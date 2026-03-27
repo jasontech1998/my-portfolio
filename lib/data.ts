@@ -6,6 +6,7 @@ export const projects: TProject[] = [
     description:
       "A marketing landing page for a computing technology brand, built with Tremor and Next.js as an exercise in high-polish landing page design.",
     techStack: ["Next.js", "React", "TypeScript", "Tailwind", "Framer Motion", "Tremor"],
+    date: "February 2025",
     media: [{ type: "video", src: "/assets/projects/silhouette-demo.mp4" }],
     github: "https://github.com/jasontech1998/silhouette-exercise",
     demo: "https://silhouette-exercise.vercel.app/",
@@ -16,6 +17,7 @@ export const projects: TProject[] = [
     description:
       "A Next.js project featuring a Linear-inspired dashboard with advanced due date indicators for efficient task management.",
     techStack: ["Next.js", "React", "TypeScript", "Tailwind", "hello-pangea/dnd"],
+    date: "September 2024",
     media: [{ type: "video", src: "/assets/projects/lineardashboard_demo.mp4" }],
     github: "https://github.com/jasontech1998/linear-dashboard",
     demo: "https://linear-dashboard.vercel.app/",
@@ -25,6 +27,7 @@ export const projects: TProject[] = [
     description:
       "Leverages the OpenAI API to analyze festival lineups and generate personalized Spotify playlists. Uses advanced language models to understand artist styles and user preferences, with AWS S3 for scalable storage of festival lineup images.",
     techStack: ["Next.js", "React", "TypeScript", "NextAuth", "OpenAI API", "Spotify Web API", "AWS", "Tailwind", "shadcn"],
+    date: "June 2024",
     media: [{ type: "video", src: "/assets/projects/festifaves_demo.mp4" }],
     github: "https://github.com/jasontech1998/festifaves",
     demo: "https://festifaves.vercel.app/",
@@ -35,6 +38,7 @@ export const projects: TProject[] = [
     description:
       "An app designed to automate the sharing of your liked songs from any album, making it easy for music enthusiasts to share their favorite tracks effortlessly.",
     techStack: ["Next.js", "React", "TypeScript", "NextAuth", "Spotify Web API", "Tailwind", "shadcn"],
+    date: "June 2024",
     media: [{ type: "video", src: "/assets/projects/likemix_demo.mp4" }],
     github: "https://github.com/jasontech1998/likemix",
     demo: "https://likemix.vercel.app/",

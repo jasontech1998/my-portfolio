@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme/theme-provider";
 import { LenisProvider } from "@/components/providers/LenisProvider";
 import { Navbar } from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { ScrollToTop } from "@/components/ScrollToTop";
 
 import { Inter } from "next/font/google";
 import { GeistSans } from 'geist/font/sans'
@@ -62,6 +63,7 @@ export default function RootLayout({
                 <Footer />
               </div>
             </div>
+            <ScrollToTop />
             <SpeedInsights />
           </LenisProvider>
         </ThemeProvider>
