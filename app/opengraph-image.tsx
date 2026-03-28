@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 
+export const revalidate = 0;
 export const runtime = "edge";
 export const alt = "Jason Yu — AI-Native Product Engineer";
 export const size = { width: 1200, height: 630 };
