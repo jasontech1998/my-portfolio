@@ -41,6 +41,10 @@ const componentRegistry: Record<string, React.ComponentType<any>> = {
     () => import("@/components/creative/CustomHoverCard"),
     { ssr: false }
   ),
+  PretextReflow: dynamic(
+    () => import("@/components/creative/PretextReflow"),
+    { ssr: false }
+  ),
 };
 
 export function CreativeShowcase({ item }: { item: TCreativeItem }) {

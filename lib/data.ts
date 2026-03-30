@@ -203,6 +203,13 @@ export const workData = [
 
 export const creative: TCreativeItem[] = [
   {
+    title: "Pretext Canvas Reflow",
+    description: "DVD-style bouncing cube that reflows text in real-time, powered by Pretext's layoutNextLine API — zero DOM measurement",
+    techStack: ["React", "TypeScript", "Canvas", "Pretext"],
+    date: "March 2026",
+    componentKey: "PretextReflow",
+  },
+  {
     title: "Custom Article Links",
     description: "Grid system article links with animated hover motion",
     techStack: ["React", "TypeScript", "Tailwind"],
