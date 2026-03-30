@@ -2,6 +2,16 @@ import { TProject, TCreativeItem, TWorkSection } from "./types";
 
 export const projects: TProject[] = [
   {
+    title: "Wavetext",
+    description:
+      "Audio-reactive lyrics visualizer that flows text around a live frequency-driven blob using the Pretext text layout engine. Features multi-column text reflow, dynamic font sizing, particle effects, and word-level lyric highlighting synced to music.",
+    techStack: ["Next.js 15", "TypeScript", "Canvas API", "Web Audio API", "@chenglou/pretext", "Tailwind CSS 4"],
+    date: "March 2026",
+    media: [{ type: "video", src: "/assets/projects/wavetext-demo.mp4" }],
+    github: "https://github.com/jasontech1998/pretext-audio",
+    demo: "https://wavetext-audio.vercel.app/",
+  },
+  {
     title: "Silhouette",
     description:
       "A marketing landing page for a computing technology brand, built with Tremor and Next.js as an exercise in high-polish landing page design.",

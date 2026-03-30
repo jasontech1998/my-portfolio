@@ -5,6 +5,7 @@ import { LenisProvider } from "@/components/providers/LenisProvider";
 import { Navbar } from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ScrollToTop } from "@/components/ScrollToTop";
+import { ScrollToTopOnNav } from "@/components/providers/ScrollToTopOnNav";
 
 import { GeistMono } from 'geist/font/mono'
 
@@ -50,6 +51,7 @@ export default function RootLayout({
       <body className={`${GeistMono.className} antialiased min-h-screen bg-background text-foreground`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <LenisProvider>
+            <ScrollToTopOnNav />
 <div className="relative flex flex-col min-h-screen max-w-2xl w-full mx-auto">
               <div className="px-4 md:px-0 w-full">
                 <Navbar />
