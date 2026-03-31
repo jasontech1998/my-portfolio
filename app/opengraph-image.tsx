@@ -47,29 +47,6 @@ export default async function Image() {
           </div>
         </div>
 
-        {/* Tag — bottom left */}
-        <div
-          style={{
-            position: "absolute",
-            bottom: 40,
-            left: 40,
-            display: "flex",
-            backgroundColor: "rgba(255, 255, 255, 0.1)",
-            borderRadius: 8,
-            padding: "8px 16px",
-          }}
-        >
-          <span
-            style={{
-              fontSize: 16,
-              color: "#a1a1aa",
-              fontFamily: "monospace",
-              letterSpacing: "0.02em",
-            }}
-          >
-            Jason Yu | AI-Native Product Engineer
-          </span>
-        </div>
       </div>
     ),
     { ...size }
