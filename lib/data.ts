@@ -61,7 +61,7 @@ export const projects: TProject[] = [
 export const roeblingWork: TWorkSection = {
   company: "Roebling",
   companyUrl: "https://www.roebling.com",
-  role: "Founding Software Engineer",
+  role: "Senior Founding Engineer",
   period: "Apr. 2025 – Present",
   headline:
     "Built an AI-powered SaaS platform from an empty repository to production.",
